@@ -66,12 +66,20 @@ client.on(Events.InteractionCreate, async interaction => {
 })
 
 client.on('messageCreate', async message => {
-  // if (message.author.bot) return
+  if (message.author.bot) return
   // console.log(message)
 })
 
 client.once(Events.ClientReady, () => {
-  console.log('Ready!')
+  console.log(
+    `\n\n\╔════════════════════════════════╗
+║  Discord Bot activated!
+║  Features:
+║  - ChatGPT  
+║  - Midjourney
+║  - Cloudinary   
+╚════════════════════════════════╝\n\n`
+  )
 })
 
 client.login(process.env.DISCORD_AUTH_TOKEN)
