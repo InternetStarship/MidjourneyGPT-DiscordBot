@@ -8,8 +8,9 @@ const configuration = new Configuration({
   apiKey: process.env.CHATGPT_API_KEY,
 })
 const openai = new OpenAIApi(configuration)
+const cloudinary = require('cloudinary')
 
-async function autoUploader(image) {
+async function autoUploader(file) {
   const conversation = [
     {
       role: 'system',
@@ -25,8 +26,6 @@ async function autoUploader(image) {
     },
   ]
 
-  console.log(conversation)
-
   const chatgpt = await openai
     .createChatCompletion({
       model: 'gpt-3.5-turbo',
@@ -40,10 +39,20 @@ async function autoUploader(image) {
 
   try {
     const response = JSON.parse(chatgpt.data.choices[0].message.content)
+    const path = `${process.env.CLOUDINARY_FOLDER}/${response.root}/${response.root}`
 
-    console.log('* Upload to cloudinary', image, response.root, response.sub)
+    const reply = await cloudinary.v2.uploader
+      .unsigned_upload(file, process.env.CLOUDINARY_UPLOAD_PRESET, {
+        folder: path,
+      })
+      .then(response => {
+        return `**Auto Uploaded to ${path}**`
+      })
+      .catch(error => {
+        return `**Error Uploading** \`\`\`${error}\`\`\` `
+      })
 
-    return response
+    interaction.reply(reply)
   } catch (error) {
     return (
       'Sorry, ran into trouble with the OpenAI API. Error Message: ' + error

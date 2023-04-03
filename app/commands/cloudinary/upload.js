@@ -12,17 +12,17 @@ const data = new SlashCommandBuilder()
 
 data.addStringOption(option =>
   option
-    .setName('folder')
-    .setDescription(
-      'What folder should the file be uploaded to? (icons, background, etc.)'
-    )
+    .setName('file')
+    .setDescription('What is the file URL?')
     .setRequired(true)
 )
 
 data.addStringOption(option =>
   option
-    .setName('file')
-    .setDescription('What is the file URL?')
+    .setName('folder')
+    .setDescription(
+      'What folder should the file be uploaded to? (can include subfolder, ex. photos/dark)'
+    )
     .setRequired(true)
 )
 
@@ -40,7 +40,7 @@ module.exports = {
   },
 }
 
-async function upload(file, folder) {
+async function upload(file, folder = '') {
   const path = `${process.env.CLOUDINARY_FOLDER}/${folder}`
 
   return await cloudinary.v2.uploader

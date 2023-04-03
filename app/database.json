@@ -1,0 +1,18 @@
+{
+  "formulas": {
+    "photo": "A photograph of a [subject] [engaged in an action scene] with [background] background, during [time of day] with [type of lighting] and shot with a [type of lens] using [name of lens]",
+    "painting": "A painting of a [subject] engaged in an [action] scene with [background] background, in the style of [style], viewed from [perspective]",
+    "app-ui": "high-quality UI design, [subject] app, trending on Dribbble, Behance",
+    "landing-page": "landing page for [subject], [style] style, high quality, 4k",
+    "ios-icon": "icon for iOS app in high resolution, [subject], [style] style, [background] background, high quality, 4k",
+    "icon": "icon for [subject], [style], high quality, [background] background",
+    "product": "[subject], high quality, high resolution, 4K, [background] background",
+    "logo": "minimal logo of a [subject] in [style], high quality, 4k, [background] background",
+    "illustration": "illustration of a [subject] in [style] style on [background] background",
+    "mascot": "simple mascot for a [subject] company, [style] style on [background] background",
+    "background": "background for [subject] website, [style] style, high quality, 4k"
+  },
+  "config": {
+    "enabled": true
+  }
+}

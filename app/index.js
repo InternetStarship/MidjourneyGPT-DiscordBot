@@ -78,9 +78,9 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.on('messageCreate', async message => {
   if (detectMidjourneyBot(message)) {
-    const filePath = './app/database/auto-upload.json'
+    const filePath = './app/database.json'
     const data = await fs.readFile(filePath, 'utf8')
-    const config = JSON.parse(data)
+    const { config } = JSON.parse(data)
     if (config.enabled) {
       autoUploader(message.attachments.first().url)
     }

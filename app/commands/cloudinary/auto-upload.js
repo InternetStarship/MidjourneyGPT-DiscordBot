@@ -26,16 +26,16 @@ data.addStringOption(option =>
 module.exports = {
   data: data,
   async execute(interaction) {
-    const filePath = './app/database/auto-upload.json'
+    const filePath = './app/database.json'
     const toggle = interaction.options.getString('toggle')
 
     try {
-      const data = await fs.readFile(filePath, 'utf8')
-      const config = JSON.parse(data)
-      config.enabled = toggle === 'true' ? true : false
+      const fileData = await fs.readFile(filePath, 'utf8')
+      const data = JSON.parse(fileData)
+      data.config.enabled = toggle === 'true' ? true : false
 
-      await fs.writeFile(filePath, JSON.stringify(config, null, 2))
-      const response = config.enabled
+      await fs.writeFile(filePath, JSON.stringify(data, null, 2))
+      const response = data.config.enabled
         ? 'Auto-upload enabled.'
         : 'Auto-upload disabled.'
       return interaction.reply(response)
