@@ -7,7 +7,16 @@ require('dotenv').config()
 
 const fs = require('node:fs')
 const path = require('node:path')
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js')
+const {
+  Client,
+  Collection,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  Events,
+  GatewayIntentBits,
+} = require('discord.js')
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -48,7 +57,20 @@ client.on(Events.InteractionCreate, async interaction => {
   if (!command) return
 
   try {
-    await command.execute(interaction)
+    if (interaction.commandName === 'help') {
+      const row = new ActionRowBuilder().addComponents(
+        new ButtonBuilder()
+          .setCustomId('primary')
+          .setLabel('Click me!')
+          .setStyle(ButtonStyle.Primary)
+      )
+      await interaction.reply({
+        content: 'I think you should,',
+        components: [row],
+      })
+    } else {
+      await command.execute(interaction)
+    }
   } catch (error) {
     console.error(error)
     if (interaction.replied || interaction.deferred) {
@@ -66,9 +88,25 @@ client.on(Events.InteractionCreate, async interaction => {
 })
 
 client.on('messageCreate', async message => {
-  if (message.author.bot) return
-  // console.log(message)
+  if (detectMidjourneyBot(message)) {
+    const image = message.attachments.first().url
+    console.log(image)
+  }
 })
+
+function detectMidjourneyBot(message) {
+  const pattern = /Image #\d+ <@/
+
+  if (
+    message.author.bot &&
+    message.attachments &&
+    message.author.username === 'Midjourney Bot' &&
+    message.mentions?.repliedUser?.username === 'Midjourney Bot' &&
+    pattern.test(message.content)
+  )
+    return true
+  return false
+}
 
 client.once(Events.ClientReady, () => {
   console.log(
