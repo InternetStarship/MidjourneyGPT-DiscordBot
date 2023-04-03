@@ -44,3 +44,9 @@ CLOUDINARY_FOLDER=
 # ChatGPT
 CHATGPT_API_KEY=
 ```
+
+## ChatGPT API
+
+## Cloudinary API
+
+Create unsigned present and create a folder.

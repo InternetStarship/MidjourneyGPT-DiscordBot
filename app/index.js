@@ -20,6 +20,7 @@ const command_prefix = process.env.COMMAND_PREFIX
 client.once(Events.ClientReady, () => console.log('Discord Bot is Ready'))
 
 client.on('messageCreate', async message => {
+  // console.log(message)
   if (!message.author.bot && message.content.startsWith(command_prefix)) {
     await runCommand(message)
   }
