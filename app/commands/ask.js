@@ -3,6 +3,7 @@
  *   All rights reserved.
  */
 
+const parseInputString = require('../utils/parseInput')
 const { Configuration, OpenAIApi } = require('openai')
 const configuration = new Configuration({
   apiKey: process.env.CHATGPT_API_KEY,
@@ -59,25 +60,6 @@ async function generate(message) {
     response += `\> /imagine prompt: ${replyJSON.variations[i]}\n\n`
   }
   message.reply(response)
-}
-
-function parseInputString(input) {
-  const typeRegex = /^(\w+)/
-  const keyValueRegex = /\[(\w+)=([\w\s,]+)\]/g
-
-  const typeMatch = input.match(typeRegex)
-  const type = typeMatch ? typeMatch[1] : null
-
-  const keyValuePairs = {}
-  let match
-
-  while ((match = keyValueRegex.exec(input)) !== null) {
-    const key = match[1]
-    const value = match[2]
-    keyValuePairs[key] = value
-  }
-
-  return { type, ...keyValuePairs }
 }
 
 module.exports = generate
