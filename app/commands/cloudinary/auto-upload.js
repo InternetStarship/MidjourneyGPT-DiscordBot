@@ -40,8 +40,7 @@ module.exports = {
         : 'Auto-upload disabled.'
       return interaction.reply(response)
     } catch (err) {
-      console.error(`Error: ${err}`)
-      const response = 'An error occurred while toggling auto-upload.'
+      const response = 'An error occurred while toggling auto-upload: ' + err
       return interaction.reply(response)
     }
   },
