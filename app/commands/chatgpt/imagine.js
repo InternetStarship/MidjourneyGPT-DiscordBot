@@ -34,13 +34,6 @@ options.forEach(cat => {
 
 data.addStringOption(option =>
   option
-    .setName('count')
-    .setDescription('How many variations?')
-    .setRequired(true)
-)
-
-data.addStringOption(option =>
-  option
     .setName('subject')
     .setDescription('What is the subject of the image?')
     .setRequired(true)
@@ -50,6 +43,22 @@ data.addStringOption(option =>
   option
     .setName('style')
     .setDescription('What is the style of the image?')
+    .setRequired(true)
+)
+
+data.addStringOption(option =>
+  option
+    .setName('background')
+    .setDescription(
+      'What is the background of the image? (white, transparent or creative)'
+    )
+    .setRequired(true)
+)
+
+data.addStringOption(option =>
+  option
+    .setName('count')
+    .setDescription('How many variations?')
     .setRequired(true)
 )
 
@@ -68,32 +77,35 @@ module.exports = {
     const subject = interaction.options.getString('subject')
     const style = interaction.options.getString('style')
     const prompt = interaction.options.getString('prompt')
+    const background = interaction.options.getString('background')
     const count = interaction.options.getString('count')
 
     if (!formula) return interaction.reply('Please provide a formula.')
     if (!subject) return interaction.reply('Please provide a subject.')
     if (!style) return interaction.reply('Please provide a style.')
+    if (!background) return interaction.reply('Please provide a background.')
     if (!count) return interaction.reply('Please provide a count.')
 
     await interaction.deferReply()
     await interaction.editReply(
-      await generate(formula, subject, style, prompt, count)
+      await generate(formula, subject, style, prompt, background, count)
     )
   },
 }
 
-async function generate(formula, subject, style, prompt, count) {
+async function generate(formula, subject, style, prompt, background, count) {
   const selectedFormula = formulas[formula]
   const result = replacePlaceholders(selectedFormula, prompt)
   const content = result
     .replace('[subject]', `[${subject}]`)
     .replace('[style]', `[${style}]`)
+    .replace('[background]', `[${background}]`)
 
   const conversation = [
     {
       role: 'system',
       content:
-        'You are a variation wizard. You take any sentence and make variations of sentence where any word that has brackets you will find various words to use. Example, a sentence like "a photo of [cat] with [type of lighting]" could be turned into  2 variations like this: 1: "a photo of a large cat with dark lighting" 2: "a photo of a fluffy orange cat with bright contrast lighting". You only provide JSON output. Make sure to always change what is inside bracket for each variation. Only output JSON like this: {"variations": ["variation 1", "variation 2"]}',
+        'You a creative writer and excel at find descriptive ways to change words. You take any sentence and make variations of sentence where any word that has brackets you will find various words to use. Example, a sentence like "a photo of [cat] with [type of lighting]" could be turned into  2 variations like this: 1: "a photo of a large cat with dark lighting" 2: "a photo of a fluffy orange cat with bright contrast lighting". You only provide JSON output. Make sure to always change what is inside bracket for each variation. Only output JSON like this: {"variations": ["variation 1", "variation 2"]}',
     },
     {
       role: 'user',
