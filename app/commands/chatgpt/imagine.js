@@ -124,14 +124,22 @@ async function generate(formula, subject, style, prompt, background, count) {
       )
     })
 
-  const replyJSON = JSON.parse(chatgpt.data.choices[0].message.content)
+  try {
+    const replyJSON = JSON.parse(chatgpt.data.choices[0].message.content)
 
-  let response = ''
-  for (let i = 0; i < replyJSON.variations.length; i++) {
-    response += `\> /imagine prompt: ${replyJSON.variations[i]}\n\n`
+    let response = 'Creative prompts for Midjourney:\n\n'
+    for (let i = 0; i < replyJSON.variations.length; i++) {
+      response += `**V${i + 1}** \`\`\`/imagine prompt: ${
+        replyJSON.variations[i]
+      }\`\`\`\n`
+    }
+
+    return response
+  } catch (error) {
+    return (
+      'Sorry, ran into trouble with the OpenAI API. Error Message: ' + error
+    )
   }
-
-  return response
 }
 
 function replacePlaceholders(template, keyValueString) {
