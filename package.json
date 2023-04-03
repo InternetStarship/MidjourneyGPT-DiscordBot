@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app/index.js",
+    "start": "node app/deploy-commands.js; nodemon app/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,7 +13,7 @@
     "cloudinary": "^1.35.0",
     "discord.js": "^14.9.0",
     "dotenv": "^16.0.3",
-    "openai": "^3.2.1",
-    "require-dir": "^1.2.0"
+    "nodemon": "^2.0.22",
+    "openai": "^3.2.1"
   }
 }

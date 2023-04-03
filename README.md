@@ -35,6 +35,8 @@ COMMAND_PREFIX=!!
 
 # Discord
 DISCORD_AUTH_TOKEN=
+DISCORD_CLIENT_ID=
+DISCORD_GUILD_ID=
 
 # Cloudinary
 CLOUDINARY_URL=
@@ -50,3 +52,7 @@ CHATGPT_API_KEY=
 ## Cloudinary API
 
 Create unsigned present and create a folder.
+
+### Getting Guild ID
+
+To get the server ID for the first parameter, open Discord, go to Settings > Advanced and enable developer mode. Then, right-click on the server title and select "Copy ID" to get the guild ID.
