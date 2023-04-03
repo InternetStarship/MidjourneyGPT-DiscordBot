@@ -14,7 +14,7 @@ const data = new SlashCommandBuilder()
 
 data.addStringOption(option =>
   option
-    .setName('isenabled')
+    .setName('toggle')
     .setDescription(`Pick a formula to use.`)
     .addChoices(
       { name: 'Enabled', value: 'true' },
@@ -27,12 +27,12 @@ module.exports = {
   data: data,
   async execute(interaction) {
     const filePath = './app/database/auto-upload.json'
-    const isenabled = interaction.options.getString('isenabled')
+    const toggle = interaction.options.getString('toggle')
 
     try {
       const data = await fs.readFile(filePath, 'utf8')
       const config = JSON.parse(data)
-      config.enabled = isenabled === 'true' ? true : false
+      config.enabled = toggle === 'true' ? true : false
 
       await fs.writeFile(filePath, JSON.stringify(config, null, 2))
       const response = config.enabled

@@ -57,20 +57,7 @@ client.on(Events.InteractionCreate, async interaction => {
   if (!command) return
 
   try {
-    if (interaction.commandName === 'help') {
-      const row = new ActionRowBuilder().addComponents(
-        new ButtonBuilder()
-          .setCustomId('primary')
-          .setLabel('Click me!')
-          .setStyle(ButtonStyle.Primary)
-      )
-      await interaction.reply({
-        content: 'I think you should,',
-        components: [row],
-      })
-    } else {
-      await command.execute(interaction)
-    }
+    await command.execute(interaction)
   } catch (error) {
     console.error(error)
     if (interaction.replied || interaction.deferred) {
@@ -89,14 +76,19 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.on('messageCreate', async message => {
   if (detectMidjourneyBot(message)) {
-    const image = message.attachments.first().url
-    console.log(image)
+    const filePath = './app/database/auto-upload.json'
+    const data = await fs.readFile(filePath, 'utf8')
+    const config = JSON.parse(data)
+    if (config.enabled) {
+      const image = message.attachments.first().url
+      console.log('1. Let ChatGPT pick a directory name')
+      console.log('2. AUTO UPLOADING image', image)
+    }
   }
 })
 
 function detectMidjourneyBot(message) {
   const pattern = /Image #\d+ <@/
-
   if (
     message.author.bot &&
     message.attachments &&
