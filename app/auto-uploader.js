@@ -8,26 +8,24 @@ const configuration = new Configuration({
   apiKey: process.env.CHATGPT_API_KEY,
 })
 const openai = new OpenAIApi(configuration)
-const { formulas } = require('../../database/midjourney-formulas.json')
-const options = Object.entries(formulas).map(([key, value]) => {
-  return {
-    name: key,
-    value: key,
-  }
-})
 
 async function autoUploader(image) {
   const conversation = [
     {
       role: 'system',
-      content:
-        'You a creative writer and excel at find descriptive ways to change words. You take any sentence and make variations of sentence where any word that has brackets you will find various words to use. Example, a sentence like "a photo of [cat] with [type of lighting]" could be turned into  2 variations like this: 1: "a photo of a large cat with dark lighting" 2: "a photo of a fluffy orange cat with bright contrast lighting". You only provide JSON output. Make sure to always change what is inside bracket for each variation. Always change each word, each time, not just one of them, but all of them. Only output JSON like this: {"variations": ["variation 1", "variation 2"]}',
+      content: `You are the best at creating folder names and creating the perfect folder name based on the a piece of text. You can pick from the following folders as root and then create a sub-folder that best suites the text. Root folders choices (${JSON.stringify(
+        Object.entries(formulas).map(([key, value]) => {
+          return key
+        })
+      )}) You will always return ONLY your answer as raw JSON like this: { "root": "folder", "sub": "folder" }`,
     },
     {
       role: 'user',
-      content: `I want  variations of the following as JSON (never append a period at end of sentence or capitalize, keep all lower case). Only raw text JSON: "${content}"`,
+      content: `I want you to give me the root folder and a sub folder for this: "${content}"`,
     },
   ]
+
+  console.log(conversation)
 
   const chatgpt = await openai
     .createChatCompletion({
@@ -41,10 +39,9 @@ async function autoUploader(image) {
     })
 
   try {
-    const response = chatgpt.data.choices[0].message.content
+    const response = JSON.parse(chatgpt.data.choices[0].message.content)
 
-    console.log('1. Let ChatGPT pick a directory name')
-    console.log('2. AUTO UPLOADING image', image, response)
+    console.log('* Upload to cloudinary', image, response.root, response.sub)
 
     return response
   } catch (error) {
@@ -54,4 +51,4 @@ async function autoUploader(image) {
   }
 }
 
-export default autoUploader
+module.exports = { autoUploader }
