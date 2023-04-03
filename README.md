@@ -25,7 +25,7 @@ You must provide your messages like this:
 
 * type = the type of formula, ex. "icon" or "background"
 
-Based on the options available for the formulas in the `/app/midjourney-formulas.json` file.
+Based on the options available for the formulas in the `/app/database.json` file.
 
 ### Environment Variables
 

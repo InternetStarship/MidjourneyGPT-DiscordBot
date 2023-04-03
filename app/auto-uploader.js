@@ -39,7 +39,7 @@ async function autoUploader(file) {
 
   try {
     const response = JSON.parse(chatgpt.data.choices[0].message.content)
-    const path = `${process.env.CLOUDINARY_FOLDER}/${response.root}/${response.root}`
+    const path = `${process.env.CLOUDINARY_FOLDER}/${response.root}/${response.sub}`
 
     const reply = await cloudinary.v2.uploader
       .unsigned_upload(file, process.env.CLOUDINARY_UPLOAD_PRESET, {
