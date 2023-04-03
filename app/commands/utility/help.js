@@ -4,7 +4,7 @@
  */
 
 const { SlashCommandBuilder } = require('discord.js')
-const { formulas } = require('../../engine/midjourney-formulas.json')
+const { formulas } = require('../../database/midjourney-formulas.json')
 
 module.exports = {
   data: new SlashCommandBuilder()
