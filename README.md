@@ -4,7 +4,12 @@ This is a private Discord bot for the MidjourneyGPT Discord server. It is not in
 
 ## Setup
 
-coming soon.
+Run locally:
+
+```
+npm install
+npm start
+```
 
 ## Usage
 
