@@ -1,14 +1,15 @@
 {
   "formulas": {
-    "photo": "A photograph of a [subject] [engaged in an action scene] with [background context], during [time of day] with [type of lighting] and shot with a [type of lens] using [name of lens] — ar 16:9",
+    "photo": "A photograph of a [subject] [engaged in an action scene] with [background context], during [time of day] with [type of lighting] and shot with a [type of lens] using [name of lens] —ar 16:9",
     "art": "An illustration of a [subject] [engaged in an action scene] with [background context], in the style of [art style], viewed from [perspective] — ar 3:2",
     "app-ui": "high-quality UI design, [subject] app, trending on Dribbble, Behance",
     "landing-page": "landing page for [subject], [style] style, high quality, HQ",
     "ios-icon": "icon for iOS app in high resolution, [subject], [style] style, high quality, HQ",
-    "icon": "icon for [subject], [style], high quality, HQ",
+    "icon": "icon for [subject], [style], high quality, transparent background, HQ",
     "product": "[subject] on a transparent background, high quality, high resolution, 4K ",
     "logo": "minimal logo of a [subject] in [style], high quality, HQ",
     "illustration": "illustration of a [subject] in [style] style on white background",
-    "mascot": "simple mascot for a [subject] company, [style] style"
+    "mascot": "simple mascot for a [subject] company, [style] style",
+    "background": "background for [subject] website, [style] style, high quality, HQ --ar 16:9"
   }
 }

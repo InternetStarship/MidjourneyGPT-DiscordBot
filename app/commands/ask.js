@@ -13,13 +13,33 @@ const { formulas } = require('../midjourney-formulas.json')
 async function generate(message) {
   await message.channel.sendTyping()
 
-  const content = message.content.replace('!!generate ', '')
+  let prompt = ''
+  const content = message.content.replace('!!ask ', '')
+  const parsedData = parseInputString(content)
+
+  if (parsedData.type) {
+    let formula = formulas[parsedData.type].replace(
+      /\[([^\]]+)\]/g,
+      (match, p1) => {
+        if (parsedData[p1]) return `[${parsedData[p1]}]`
+        return match
+      }
+    )
+
+    if (formula) {
+      prompt = `Create 8 variations of of the following:\n\n"${formula}"\n\n`
+    }
+  }
 
   const conversation = [
-    { role: 'system', content: 'You are a friendly chatbot.' },
+    {
+      role: 'system',
+      content:
+        'You are a variation wizard. You take any sentence and make variations of sentence where any word that has brackets you will find various words to use. Example, a sentence like "a photo of [cat] with [type of lighting]" could be turned into  2 variations like this: 1: "a photo of a large cat with dark lighting" 2: "a photo of a fluffy orange cat with bright contrast lighting". You only provide JSON output. Make sure to always change what is inside bracket for each variation. Only output JSON like this: {"variations": ["variation 1", "variation 2"]}',
+    },
     {
       role: 'user',
-      content: content,
+      content: prompt,
     },
   ]
 
@@ -32,19 +52,32 @@ async function generate(message) {
       console.log(`OPENAI ERR: ${error}`)
     })
 
-  const reply =
-    '!!\n\n **ChatGPT Response**\n\n' +
-    appendArrowToNewLines(result.data.choices[0].message.content)
+  const replyJSON = JSON.parse(result.data.choices[0].message.content)
 
-  message.reply(reply)
-
-  console.log(formulas)
+  let response = ''
+  for (let i = 0; i < replyJSON.variations.length; i++) {
+    response += `\> /imagine prompt: ${replyJSON.variations[i]}\n\n`
+  }
+  message.reply(response)
 }
 
-function appendArrowToNewLines(str) {
-  const lines = str.split('\n')
-  const result = lines.map(line => `\> ` + line).join('\n')
-  return result
+function parseInputString(input) {
+  const typeRegex = /^(\w+)/
+  const keyValueRegex = /\[(\w+)=([\w\s,]+)\]/g
+
+  const typeMatch = input.match(typeRegex)
+  const type = typeMatch ? typeMatch[1] : null
+
+  const keyValuePairs = {}
+  let match
+
+  while ((match = keyValueRegex.exec(input)) !== null) {
+    const key = match[1]
+    const value = match[2]
+    keyValuePairs[key] = value
+  }
+
+  return { type, ...keyValuePairs }
 }
 
 module.exports = generate

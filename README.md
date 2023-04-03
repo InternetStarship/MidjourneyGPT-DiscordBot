@@ -15,7 +15,9 @@ Commands:
 You must provide your messages like this:
 
 ```
-!!ask [subject=Burger] [style=modern]
+!!ask type [subject=Burger] [style=modern]
 ```
+
+* type = the type of formula, ex. "icon" or "background"
 
 Based on the options available for the formulas in the `/app/midjourney-formulas.json` file.
