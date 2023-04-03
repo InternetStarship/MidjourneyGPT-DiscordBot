@@ -26,3 +26,21 @@ You must provide your messages like this:
 * type = the type of formula, ex. "icon" or "background"
 
 Based on the options available for the formulas in the `/app/midjourney-formulas.json` file.
+
+### Environment Variables
+
+```
+# Prefix
+COMMAND_PREFIX=!!
+
+# Discord
+DISCORD_AUTH_TOKEN=
+
+# Cloudinary
+CLOUDINARY_URL=
+CLOUDINARY_UPLOAD_PRESET=
+CLOUDINARY_FOLDER=
+
+# ChatGPT
+CHATGPT_API_KEY=
+```
