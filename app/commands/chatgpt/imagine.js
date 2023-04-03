@@ -18,7 +18,7 @@ const options = Object.entries(formulas).map(([key, value]) => {
 })
 
 const data = new SlashCommandBuilder()
-  .setName('imagine')
+  .setName('auto-imagine')
   .setDescription('Auto imagine with ChatGPT')
 
 data.addStringOption(option =>
@@ -64,7 +64,7 @@ data.addStringOption(option =>
 
 data.addStringOption(option =>
   option
-    .setName('prompt')
+    .setName('advanced')
     .setDescription(
       'Advanced customization of the prompt, see /help to learn more.'
     )
@@ -76,7 +76,7 @@ module.exports = {
     const formula = interaction.options.getString('formula')
     const subject = interaction.options.getString('subject')
     const style = interaction.options.getString('style')
-    const prompt = interaction.options.getString('prompt')
+    const advanced = interaction.options.getString('advanced')
     const background = interaction.options.getString('background')
     const count = interaction.options.getString('count')
 
@@ -88,7 +88,7 @@ module.exports = {
 
     await interaction.deferReply()
     await interaction.editReply(
-      await generate(formula, subject, style, prompt, background, count)
+      await generate(formula, subject, style, advanced, background, count)
     )
   },
 }
@@ -109,7 +109,7 @@ async function generate(formula, subject, style, prompt, background, count) {
     },
     {
       role: 'user',
-      content: `I want ${count} variations of the following as JSON (never append a period at end of sentence or capitalize, keep all lower case): "${content}"`,
+      content: `I want ${count} variations of the following as JSON (never append a period at end of sentence or capitalize, keep all lower case). Only raw text JSON: "${content}"`,
     },
   ]
 
@@ -127,7 +127,7 @@ async function generate(formula, subject, style, prompt, background, count) {
   try {
     const replyJSON = JSON.parse(chatgpt.data.choices[0].message.content)
 
-    let response = 'Creative prompts for Midjourney:\n\n'
+    let response = 'Prompts for Midjourney:\n\n'
     for (let i = 0; i < replyJSON.variations.length; i++) {
       response += `**V${i + 1}** \`\`\`/imagine prompt: ${
         replyJSON.variations[i]
