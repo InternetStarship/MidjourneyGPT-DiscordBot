@@ -1,7 +1,7 @@
 {
   "formulas": {
     "photo": "A photograph of a [subject] [engaged in an action scene] with [background context], during [time of day] with [type of lighting] and shot with a [type of lens] using [name of lens] —ar 16:9",
-    "art": "An illustration of a [subject] [engaged in an action scene] with [background context], in the style of [art style], viewed from [perspective] — ar 3:2",
+    "art": "An illustration of a [subject] engaged in an [action] scene with [background context], in the style of [style], viewed from [perspective] — ar 3:2",
     "app-ui": "high-quality UI design, [subject] app, trending on Dribbble, Behance",
     "landing-page": "landing page for [subject], [style] style, high quality, HQ",
     "ios-icon": "icon for iOS app in high resolution, [subject], [style] style, high quality, HQ",
