@@ -31,6 +31,8 @@ client.commands = new Collection()
 const foldersPath = path.join(__dirname, 'commands')
 const commandFolders = fs.readdirSync(foldersPath)
 
+const { autoUploader } = require('./auto-uploader.js')
+
 for (const folder of commandFolders) {
   const commandsPath = path.join(foldersPath, folder)
   const commandFiles = fs
@@ -80,9 +82,7 @@ client.on('messageCreate', async message => {
     const data = await fs.readFile(filePath, 'utf8')
     const config = JSON.parse(data)
     if (config.enabled) {
-      const image = message.attachments.first().url
-      console.log('1. Let ChatGPT pick a directory name')
-      console.log('2. AUTO UPLOADING image', image)
+      autoUploader(message.attachments.first().url)
     }
   }
 })

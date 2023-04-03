@@ -16,7 +16,7 @@ const options = Object.entries(formulas).map(([key, value]) => {
   }
 })
 
-async function askChatGPTForFolder() {
+async function autoUploader(image) {
   const conversation = [
     {
       role: 'system',
@@ -25,7 +25,7 @@ async function askChatGPTForFolder() {
     },
     {
       role: 'user',
-      content: `I want ${count} variations of the following as JSON (never append a period at end of sentence or capitalize, keep all lower case). Only raw text JSON: "${content}"`,
+      content: `I want  variations of the following as JSON (never append a period at end of sentence or capitalize, keep all lower case). Only raw text JSON: "${content}"`,
     },
   ]
 
@@ -43,6 +43,9 @@ async function askChatGPTForFolder() {
   try {
     const response = chatgpt.data.choices[0].message.content
 
+    console.log('1. Let ChatGPT pick a directory name')
+    console.log('2. AUTO UPLOADING image', image, response)
+
     return response
   } catch (error) {
     return (
@@ -50,3 +53,5 @@ async function askChatGPTForFolder() {
     )
   }
 }
+
+export default autoUploader
