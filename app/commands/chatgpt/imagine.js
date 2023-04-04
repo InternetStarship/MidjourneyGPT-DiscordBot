@@ -117,17 +117,20 @@ async function generate(
   const content = result
     .replace('[subject]', `[${subject}]`)
     .replace('[style]', `[${style}]`)
-    .replace('[background]', `[DO-NOT-TOUCH-THIS]`)
+    .replace('[background] background', `--bg`)
 
   const conversation = [
     {
       role: 'system',
       content:
-        'You a creative writer and excel at find descriptive ways to change words. You take any sentence and make variations of sentence where any word that has brackets you will find various words to use. Always leave [background] as is. Example, a sentence like "a photo of [cat] with [type of lighting]" could be turned into  2 variations like this: 1: "a photo of a large cat with dark lighting" 2: "a photo of a fluffy orange cat with bright contrast lighting". You only provide JSON output. Make sure to always change what is inside bracket for each variation. Always change each word, each time, not just one of them, but all of them. Only output JSON like this: {"variations": ["variation 1", "variation 2"]}',
+        'You a creative writer and excel at ultra descriptive ways to rewrite words. You take any sentence and make variations of sentence where any word that has brackets you will find alternative descriptive words to use. Remember you MUST always leave "--bg" as is. Example, a sentence like "a photo of [cat] with [type of lighting]" could be turned into  2 variations like this: 1: "a photo of a large long haired cat with green eyes and long claws with dark, moody and low smokey lighting" 2: "a photo of a fluffy orange cat with bright contrast lighting". You only provide JSON output. Make sure to always change what is inside bracket for each variation. Only output JSON like this: {"variations": ["variation 1", "variation 2"]}',
     },
     {
       role: 'user',
-      content: `I want ${count} variations of the following as JSON (never append a period at end of sentence or capitalize, keep all lower case). Only raw text JSON: "${content}"`,
+      content: `I want ${count} variations of the following as JSON (never append a period at end of sentence or capitalize, keep all lower case). Please leave "--bg" as is and only return JSON:
+      
+
+      "${content}"`,
     },
   ]
 
@@ -146,12 +149,11 @@ async function generate(
   try {
     const replyJSON = JSON.parse(
       chatgpt.data.choices[0].message.content.replaceAll(
-        'DO-NOT-TOUCH-THIS',
-        `${background}`
+        '--bg',
+        `${background} background`
       )
     )
 
-    const emojis = ['🟧', '🟨', '🟦', '🟪', '🟥', '🟫', '🟩']
     let response = 'Prompts for Midjourney:\n'
     let ar = ''
 
@@ -160,7 +162,7 @@ async function generate(
         ar = ` --ar ${aspectRatio}`
       }
 
-      response += `\n${emojis[i]} **V${i + 1}** \`\`\`/imagine prompt: ${
+      response += `\n**V${i + 1}** \`\`\`/imagine prompt: ${
         replyJSON.variations[i]
       }${ar}\`\`\` `
     }
