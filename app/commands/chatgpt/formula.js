@@ -18,7 +18,7 @@ const data = new SlashCommandBuilder()
 data.addStringOption(option =>
   option
     .setName('draft')
-    .setDescription(`Write your prompt draft for ChatGPT to improve.`)
+    .setDescription(`Write your prompt draft for ChatGPT to create formula.`)
     .setRequired(true)
 )
 
@@ -40,7 +40,7 @@ const generate = async draft => {
   const conversation = [
     {
       role: 'system',
-      content: `You help create text prompts templates for an AI text-to-image software called Midjourney. You will take concepts and make 4 variations of it as a Midjourney prompt. Always return your response inside of triple backtick code blocks. Do not provide explanation. Here is information about Midjourney as well as a prompt guide:
+      content: `You help create mad-lib style text prompts formulas for an AI text-to-image software called Midjourney. You will take concepts and make 4 variations of it as a Midjourney prompt-formula. Always return your response inside of triple backtick code blocks. Do not provide explanation. Always add mad-lib style brackets around nouns, adjectives, subjects, concepts, actions, details, etc. Always provide one answer per bracket, don't include a slash for alternatives. Here is information about Midjourney as well as a prompt guide:
       About Midjourney:
       Midjourney is an AI text-to-image generator. As the brand's website states, it aims to 'explore new mediums of thought and expanding the imaginative powers of the human species'. Midjourney asks you to input a worded prompt for an image, for example 'a fox wearing a top hat in the style of a Roald Dahl illustration' and in a few seconds, you'll be returned multiple attempts at this image in the form of a 4x4 image grid. These models have been taught the relationship shared between an image and the text that is used to describe them. The team behind Midjourney are now on the fifth iteration (V5). V5 offers higher image quality, more diverse outputs, wider stylistic range, support for seamless textures, wider aspect ratios, better image promoting, and dynamic range.
       Midjourney V5 Prompt Guide:
@@ -62,30 +62,30 @@ const generate = async draft => {
       Midjourney has been trained to produce images that favor artistic color, composition, and forms. The --stylize or --s parameter influences how strongly this training is applied. Low stylization values produce images that closely match the prompt but are less artistic. High stylization values create images that are very artistic but less connected to the prompt.
       To use stylize, Add --stylize <value> or --s <value> to the end of your prompt.
       Midjourney V5 Prompt Examples:
-      Now that you know how to prompt in Midjourney V5, here are some example prompts that put all of that information together:
+      Now that you know how to prompt in Midjourney V5, here are some example mad-lib prompts that put all of that information together:
       
-      Zack Snyder's Wonderwoman portrait in chiaroscuro black & white graphite pencil, hard-key side light, golden armor, fierce eyes, moody, wet, rain, shiny, hyper realism, cinematic lighting
+      [subject] portrait in [style] style, [additional elements], hyper realism, [type of light] lighting
+     
+      Detailed 3D model of [subject] crafted in [style] style, featuring a [background] background
       
-      Cute, japanese, asian, kawaii, 8k, 18, kimono, girl, frontal shot, ultra detailed, ultra realistic, 85mm lens, f/ 1. 8, accent lighting, portrait, face, extreme close up, public street, day, skinny, hair ponytail, pastel, blonde, goddess
-      incredibly powerful Anime Girl, created by Katsuhiro Otomo + Rumiko Takahashi, Movie poster style, box office hit, a masterpiece of storytelling, main character center focus, monsters + mech creatures locked in combat, nuclear explosions paint sky, highly detailed 8k, 4k, intricate, detailed --c 40
+      Environment concept art illustrating [subject] in [style] style, high-quality, 4K resolution, capturing a [unique atmosphere]
       
-      Pointilism + impasto, diffrachromatic glowing ethereal light, Ilya Kuvshinov + Karmen Loh + Klimt + Akihiko Yoshida, gorgeous heavenly girl laying on her back in the moments after pure ecstasy, full body, skin --ar 16:9 --s 300
+      Photograph of a [subject] [engaged in an action scene] with [background] background, during [time of day] with [type of lighting] and shot with a [type of lens] using [name of lens]
       
-      Street style portrait of a female wearing a sunglass and a gray long-sleeve top in middle of foreground, background is brutalist style HDB apartments in Singapore, evening, shot on Kodak Portra
-      a close up of a person wearing a helmet, cyberpunk art, inspired by Tom Whalen, beautiful android woman, orange metal ears, vector artwork, martin ansin --ar 1:1 --c 100 --s 0.5`,
+      High-resolution pixel art representation of [subject] in [style] style, set on a [background] backdrop, showcasing intricate details`,
     },
     {
       role: 'user',
-      content: `Give 4 Midjourney prompts for this: "${draft}" 
+      content: `Give 4 Midjourney mad-lib formulas for this: "${draft}" 
 
-      **Prompt 1:**
-      \`\`\`/imagine prompt: [replace with prompt here]\`\`\`
-      **Prompt 2:**
-      \`\`\`/imagine prompt: [replace with prompt here]\`\`\`
-      **Prompt 3:**
-      \`\`\`/imagine prompt: [replace with prompt here]\`\`\`
-      **Prompt 4:**
-      \`\`\`/imagine prompt: [replace with prompt here]\`\`\`
+      **Formula 1:**
+      \`\`\`/imagine prompt: [replace with Formula here]\`\`\`
+      **Formula 2:**
+      \`\`\`/imagine prompt: [replace with Formula here]\`\`\`
+      **Formula 3:**
+      \`\`\`/imagine prompt: [replace with Formula here]\`\`\`
+      **Formula 4:**
+      \`\`\`/imagine prompt: [replace with Formula here]\`\`\`
       `,
     },
   ]
