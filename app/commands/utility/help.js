@@ -4,7 +4,7 @@
  */
 
 const { SlashCommandBuilder } = require('discord.js')
-const { formulas } = require('../../database.json')
+const { formulas } = require('../../config/database.json')
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -19,7 +19,7 @@ module.exports = {
 \> Any attribute can be edited in the **advanced** input in the **/auto-imagine** command. You can use the following format to edit any dynamic attribute in the formula like this \`[time of day=night]\` or \`[perspective=far]\` and you can combine them like this \`[time of day=night] [perspective=far]\` or \`[time of day=night] [perspective=far] [weather=rain]\` and so on depending what is in the formula.
 \> 
 \> ** Add Formulas **
-\> You can add new formulas by editing the \`database.json\` file as an administrator and then restarting the bot server or ask wynter@hey.com for help with your own private MidjourneyGPT bot.
+\> You can add new formulas by editing the \`app/config/database.json\` file as an administrator and then restarting the bot server or ask wynter@hey.com for help with your own private MidjourneyGPT bot.
 
 **Loaded Formulas**
 ${generateSimplifiedOutput()}`)
