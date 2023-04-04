@@ -20,7 +20,7 @@ const options = Object.entries(formulas).map(([key, value]) => {
 })
 
 const data = new SlashCommandBuilder()
-  .setName('generate-prompts')
+  .setName('prompt-formula')
   .setDescription(
     'Build prompts for Midjourney using your formulas with ChatGPT.'
   )

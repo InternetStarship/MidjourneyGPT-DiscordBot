@@ -7,9 +7,9 @@ const { SlashCommandBuilder } = require('discord.js')
 const fs = require('fs').promises
 
 const data = new SlashCommandBuilder()
-  .setName('auto-upload')
+  .setName('upload-auto-toggle')
   .setDescription(
-    'Toggle "Auto-Upload" - Automatically upload images to Cloudinary with ChatGPT suggested folders.'
+    'Automatically upload images to Cloudinary with ChatGPT suggested folders.'
   )
 
 data.addStringOption(option =>

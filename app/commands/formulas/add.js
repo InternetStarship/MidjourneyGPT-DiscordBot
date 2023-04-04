@@ -50,9 +50,16 @@ module.exports = {
 
       data.formulas[`${name}`] = prompt
 
-      await fs.writeFile(filePath, JSON.stringify(data, null, 2), () => {
-        console.log('Updated database.json file.')
-      })
+      // if data.formulas more than 25
+      if (Object.keys(data.formulas).length > 25) {
+        return interaction.reply(
+          `You have reached the maximum amount of 25 formulas. This is a discord limit.`
+        )
+      } else {
+        await fs.writeFile(filePath, JSON.stringify(data, null, 2), () => {
+          console.log('Updated database.json file.')
+        })
+      }
 
       return interaction.reply(
         `✅\n\n**Added formula to database.**

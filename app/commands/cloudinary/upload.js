@@ -7,7 +7,7 @@ const { SlashCommandBuilder } = require('discord.js')
 const cloudinary = require('cloudinary')
 
 const data = new SlashCommandBuilder()
-  .setName('upload')
+  .setName('upload-file')
   .setDescription('Upload a file to Cloudinary folder.')
 
 data.addStringOption(option =>
