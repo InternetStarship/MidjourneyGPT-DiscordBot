@@ -18,8 +18,10 @@ const options = Object.entries(formulas).map(([key, value]) => {
 })
 
 const data = new SlashCommandBuilder()
-  .setName('auto-imagine')
-  .setDescription('Auto imagine with ChatGPT')
+  .setName('generate-prompts')
+  .setDescription(
+    'Build prompts for Midjourney using your formulas with ChatGPT.'
+  )
 
 data.addStringOption(option =>
   option
@@ -57,14 +59,15 @@ data.addStringOption(option =>
 
 data.addStringOption(option =>
   option
-    .setName('count')
-    .setDescription('How many variations?')
-    .setRequired(true)
+    .setName('aspect-ratio')
+    .setDescription(
+      'What is the aspect ratio? Default is 1:1. (16:9, 4:3, 1:1, 2:3, 3:4, 9:16, 3:2, 1:2, 2:1)'
+    )
 )
 
 data.addStringOption(option =>
   option
-    .setName('advanced')
+    .setName('variables')
     .setDescription(
       'Advanced customization of the prompt, see /help to learn more.'
     )
@@ -76,26 +79,41 @@ module.exports = {
     const formula = interaction.options.getString('formula')
     const subject = interaction.options.getString('subject')
     const style = interaction.options.getString('style')
-    const advanced = interaction.options.getString('advanced')
+    const variables = interaction.options.getString('variables')
     const background = interaction.options.getString('background')
-    const count = interaction.options.getString('count')
+    const aspectRatio = interaction.options.getString('aspect-ratio')
 
     if (!formula) return interaction.reply('Please provide a formula.')
     if (!subject) return interaction.reply('Please provide a subject.')
     if (!style) return interaction.reply('Please provide a style.')
     if (!background) return interaction.reply('Please provide a background.')
-    if (!count) return interaction.reply('Please provide a count.')
 
     await interaction.deferReply()
     await interaction.editReply(
-      await generate(formula, subject, style, advanced, background, count)
+      await generate(
+        formula,
+        subject,
+        style,
+        variables,
+        background,
+        4,
+        aspectRatio
+      )
     )
   },
 }
 
-async function generate(formula, subject, style, prompt, background, count) {
+async function generate(
+  formula,
+  subject,
+  style,
+  variables,
+  background,
+  count,
+  aspectRatio
+) {
   const selectedFormula = formulas[formula]
-  const result = replacePlaceholders(selectedFormula, prompt)
+  const result = replacePlaceholders(selectedFormula, variables)
   const content = result
     .replace('[subject]', `[${subject}]`)
     .replace('[style]', `[${style}]`)
@@ -128,10 +146,16 @@ async function generate(formula, subject, style, prompt, background, count) {
     const replyJSON = JSON.parse(chatgpt.data.choices[0].message.content)
 
     let response = 'Prompts for Midjourney:\n\n'
+    let ar = ''
+
     for (let i = 0; i < replyJSON.variations.length; i++) {
+      if (aspectRatio) {
+        ar = ` --ar ${aspectRatio}`
+      }
+
       response += `**V${i + 1}** \`\`\`/imagine prompt: ${
         replyJSON.variations[i]
-      }\`\`\`\n`
+      }${ar}\`\`\`\n`
     }
 
     return response

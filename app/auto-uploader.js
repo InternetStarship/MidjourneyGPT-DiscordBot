@@ -12,22 +12,20 @@ const cloudinary = require('cloudinary')
 const fs = require('node:fs')
 
 async function autoUploader(file, content, message) {
-  const filePath = './app/database.json'
+  const filePath = './app/folders.json'
   const data = await fs.readFileSync(filePath, 'utf8')
-  const { formulas } = JSON.parse(data)
+  const { folders } = JSON.parse(data)
 
   const conversation = [
     {
       role: 'system',
-      content: `You are the best at creating folder names and creating the perfect folder name based on the a piece of text. You can pick from the following folders as root and then create a sub-folder that best suites the text. Always lowercase folder names. Always use - instead of space for folder names. Always pick single words for folder names. Always focus on the subject of the text, skip words like "transparent", "background", "quality" and try to find any subjects. Root folders choices (${JSON.stringify(
-        Object.entries(formulas).map(([key, value]) => {
-          return key
-        })
-      )}). Make the subsub folder more specific while sub folder is more general. When possible make folder names plural except root folder name. Always make simple names, as simple as possible. Do not include any explanations, only provide a  RFC8259 compliant JSON response following this format without deviation: { "root": "folder", "sub": "folder", "subsub": "folder" }`,
+      content: `You are the best at creating folder names and creating the perfect folder based on the a piece of text.  Always focus on the subject of the text, skip words like "transparent", "background", "quality" and try to find any subjects. Do not make up your own folder and select from below JSON. Do not include any explanations, only provide a  RFC8259 compliant JSON response following this format without deviation: { "root": "folder-name", "sub": "folder-name", "subsub": "folder-name" }. Here is JSON of root folders, subfolders and subsubfolders to pick from.
+      
+      ${JSON.stringify(folders)}`,
     },
     {
       role: 'user',
-      content: `I want you to give me the root folder and a sub folder for this: "${content}" -  Do not include any explanations, only provide a  RFC8259 compliant JSON response following this format without deviation: { "root": "folder", "sub": "folder", "subsub": "folder" }`,
+      content: `I want you to give me the root folder and a sub folder and subsub folder for this: "${content}" -  Do not include any explanations, only provide a  RFC8259 compliant JSON response following this format without deviation: { "root": "folder-name", "sub": "folder-name", "subsub": "folder-name" }`,
     },
   ]
 
