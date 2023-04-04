@@ -4,11 +4,13 @@
  */
 
 const { SlashCommandBuilder } = require('discord.js')
+
 const { Configuration, OpenAIApi } = require('openai')
 const configuration = new Configuration({
   apiKey: process.env.CHATGPT_API_KEY,
 })
 const openai = new OpenAIApi(configuration)
+
 const { formulas } = require('../../config/database.json')
 const options = Object.entries(formulas).map(([key, value]) => {
   return {
