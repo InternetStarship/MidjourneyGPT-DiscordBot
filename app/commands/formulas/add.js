@@ -8,7 +8,7 @@ const fs = require('node:fs')
 
 const data = new SlashCommandBuilder()
   .setName('formula-add')
-  .setDescription('Add a formula to your database.')
+  .setDescription('Add a formula to your database. (max: 25)')
 
 data.addStringOption(option =>
   option
