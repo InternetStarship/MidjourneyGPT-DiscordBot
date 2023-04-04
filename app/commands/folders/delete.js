@@ -20,7 +20,7 @@ data.addStringOption(option =>
 module.exports = {
   data: data,
   async execute(interaction) {
-    // const filePath = './app/database.json'
+    // const filePath = './app/config/database.json'
     // const name = interaction.options.getString('name')
     // try {
     //   const fileData = await fs.readFileSync(filePath, 'utf8')

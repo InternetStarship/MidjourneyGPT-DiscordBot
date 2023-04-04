@@ -78,7 +78,7 @@ client.on(Events.InteractionCreate, async interaction => {
 
 client.on('messageCreate', async message => {
   if (detectMidjourneyBot(message)) {
-    const filePath = './app/database.json'
+    const filePath = './app/config/database.json'
     const data = await fs.readFileSync(filePath, 'utf8')
     const { config } = JSON.parse(data)
     if (config.enabled) {

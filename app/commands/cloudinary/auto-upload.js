@@ -26,7 +26,7 @@ data.addStringOption(option =>
 module.exports = {
   data: data,
   async execute(interaction) {
-    const filePath = './app/database.json'
+    const filePath = './app/config/database.json'
     const toggle = interaction.options.getString('toggle')
 
     try {

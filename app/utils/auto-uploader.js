@@ -12,7 +12,7 @@ const cloudinary = require('cloudinary')
 const fs = require('node:fs')
 
 async function autoUploader(file, content, message) {
-  const filePath = './app/folders.json'
+  const filePath = './app/config/folders.json'
   const data = await fs.readFileSync(filePath, 'utf8')
   const { folders } = JSON.parse(data)
 
