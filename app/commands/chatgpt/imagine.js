@@ -96,7 +96,7 @@ module.exports = {
         style,
         variables,
         background,
-        4,
+        7,
         aspectRatio
       )
     )
@@ -117,13 +117,13 @@ async function generate(
   const content = result
     .replace('[subject]', `[${subject}]`)
     .replace('[style]', `[${style}]`)
-    .replace('[background]', `[${background}]`)
+    .replace('[background]', `[DO-NOT-TOUCH-THIS]`)
 
   const conversation = [
     {
       role: 'system',
       content:
-        'You a creative writer and excel at find descriptive ways to change words. You take any sentence and make variations of sentence where any word that has brackets you will find various words to use. Example, a sentence like "a photo of [cat] with [type of lighting]" could be turned into  2 variations like this: 1: "a photo of a large cat with dark lighting" 2: "a photo of a fluffy orange cat with bright contrast lighting". You only provide JSON output. Make sure to always change what is inside bracket for each variation. Always change each word, each time, not just one of them, but all of them. Only output JSON like this: {"variations": ["variation 1", "variation 2"]}',
+        'You a creative writer and excel at find descriptive ways to change words. You take any sentence and make variations of sentence where any word that has brackets you will find various words to use. Always leave [background] as is. Example, a sentence like "a photo of [cat] with [type of lighting]" could be turned into  2 variations like this: 1: "a photo of a large cat with dark lighting" 2: "a photo of a fluffy orange cat with bright contrast lighting". You only provide JSON output. Make sure to always change what is inside bracket for each variation. Always change each word, each time, not just one of them, but all of them. Only output JSON like this: {"variations": ["variation 1", "variation 2"]}',
     },
     {
       role: 'user',
@@ -138,14 +138,21 @@ async function generate(
     })
     .catch(error => {
       return (
-        'Sorry, ran into trouble with the OpenAI API. Error Message: ' + error
+        '🪳\nSorry, ran into trouble with the OpenAI API. Error Message: ' +
+        error
       )
     })
 
   try {
-    const replyJSON = JSON.parse(chatgpt.data.choices[0].message.content)
+    const replyJSON = JSON.parse(
+      chatgpt.data.choices[0].message.content.replaceAll(
+        'DO-NOT-TOUCH-THIS',
+        `${background}`
+      )
+    )
 
-    let response = 'Prompts for Midjourney:\n\n'
+    const emojis = ['🟧', '🟨', '🟦', '🟪', '🟥', '🟫', '🟩']
+    let response = 'Prompts for Midjourney:\n'
     let ar = ''
 
     for (let i = 0; i < replyJSON.variations.length; i++) {
@@ -153,15 +160,15 @@ async function generate(
         ar = ` --ar ${aspectRatio}`
       }
 
-      response += `**V${i + 1}** \`\`\`/imagine prompt: ${
+      response += `\n${emojis[i]} **V${i + 1}** \`\`\`/imagine prompt: ${
         replyJSON.variations[i]
-      }${ar}\`\`\`\n`
+      }${ar}\`\`\` `
     }
 
     return response
   } catch (error) {
     return (
-      'Sorry, ran into trouble with the OpenAI API. Error Message: ' + error
+      '🪳\nSorry, ran into trouble with the OpenAI API. Error Message: ' + error
     )
   }
 }

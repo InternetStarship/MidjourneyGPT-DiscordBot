@@ -48,9 +48,9 @@ async function upload(file, folder = '') {
       folder: path,
     })
     .then(response => {
-      return `**Successfully Uploaded** \`\`\`${response.secure_url}\`\`\` `
+      return `🤖\n**Successfully Uploaded** \`\`\`${response.secure_url}\`\`\` `
     })
     .catch(error => {
-      return `**Error Uploading** \`\`\`${error}\`\`\` `
+      return `🪳\n**Error Uploading** \`\`\`${error}\`\`\` `
     })
 }

@@ -1,16 +1,17 @@
 {
   "formulas": {
-    "photo": "Photograph of a [subject] [engaged in an action scene] with [background] background, during [time of day] with [type of lighting] and shot with a [type of lens] using [name of lens]",
-    "painting": "Painting of a [subject] engaged in an [action] scene with [background] background, in the style of [style], viewed from [perspective]",
-    "app-ui": "UI design, [subject] app, high quality, trending on Dribbble, Behance",
-    "landing-page": "landing page for [subject], [style] style, high quality, 4k",
-    "ios-icon": "icon for iOS app in high resolution, [subject], [style] style, [background] background, high quality, 4k",
-    "icon": "icon for [subject], [style], high quality, [background] background",
-    "product": "product shot of [subject], high quality, high resolution, 4K, [background] background",
-    "logo": "logo of a [subject] in [style], high quality, 4k, [background] background",
-    "illustration": "illustration of a [subject] in [style] style on [background] background",
-    "mascot": "mascot for a [subject] company, [style] style on [background] background",
-    "background": "background for [subject], [style] style, high quality, 4k"
+    "Photo": "Photograph of a [subject] [engaged in an action scene] with [background] background, during [time of day] with [type of lighting] and shot with a [type of lens] using [name of lens]",
+    "Painting": "Painting of a [subject] engaged in an [action] scene with [background] background, in the style of [style], viewed from [perspective]",
+    "App UI": "UI design, [subject] app, high quality, trending on Dribbble, Behance",
+    "Landing Page": "landing page for [subject], [style] style, high quality, 4k",
+    "iOS Icon": "icon for iOS app in high resolution, [subject], [style] style, [background] background, high quality, 4k",
+    "Icon": "icon for [subject], [style] style, high quality, [background] background",
+    "Product": "product shot of [subject], high quality, high resolution, 4K, [background] background",
+    "Logo": "logo of a [subject] in [style] style, high quality, 4k, [background] background",
+    "Illustration": "illustration of a [subject] in [style] style on [background] background",
+    "Company Mascot": "company mascot of a [subject] in [style] style on [background] background",
+    "Background": "background for [subject], [style] style, high quality, 4k",
+    "testing": "hey edited again"
   },
   "config": {
     "enabled": true

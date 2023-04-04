@@ -49,16 +49,16 @@ async function autoUploader(file, content, message) {
         folder: path,
       })
       .then(response => {
-        return `**Auto Uploaded to Cloudinary path: "${path}"**`
+        return `🤖\n**Auto Uploaded to Cloudinary path: "${path}"**`
       })
       .catch(error => {
-        return `**Error Uploading** \`\`\`${error}\`\`\` `
+        return `🪳\n**Error Uploading** \`\`\`${error}\`\`\` `
       })
 
     message.reply(reply)
   } catch (error) {
     message.reply(
-      'Sorry, ran into trouble with the OpenAI API. Error Message: ' + error
+      '🪳\nSorry, ran into trouble with the OpenAI API. Error Message: ' + error
     )
   }
 }

@@ -32,15 +32,17 @@ module.exports = {
     try {
       const fileData = await fs.readFileSync(filePath, 'utf8')
       const data = JSON.parse(fileData)
-      data.config.enabled = toggle === 'true' ? true : false
 
+      data.config.enabled = toggle === 'true' ? true : false
       await fs.writeFile(filePath, JSON.stringify(data, null, 2))
+
       const response = data.config.enabled
-        ? 'Auto-upload enabled.'
-        : 'Auto-upload disabled.'
+        ? '✅ Auto-upload enabled.'
+        : '❌ Auto-upload disabled.'
       return interaction.reply(response)
     } catch (err) {
-      const response = 'An error occurred while toggling auto-upload: ' + err
+      const response =
+        '🪳\nAn error occurred while toggling auto-upload: ' + err
       return interaction.reply(response)
     }
   },
