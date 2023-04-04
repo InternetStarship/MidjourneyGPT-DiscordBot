@@ -79,10 +79,10 @@ client.on(Events.InteractionCreate, async interaction => {
 client.on('messageCreate', async message => {
   if (detectMidjourneyBot(message)) {
     const filePath = './app/database.json'
-    const data = await fs.readFile(filePath, 'utf8')
+    const data = await fs.readFileSync(filePath, 'utf8')
     const { config } = JSON.parse(data)
     if (config.enabled) {
-      autoUploader(message.attachments.first().url)
+      autoUploader(message.attachments.first().url, message.content, message)
     }
   }
 })

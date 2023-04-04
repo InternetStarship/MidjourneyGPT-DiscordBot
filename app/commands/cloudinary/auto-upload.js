@@ -30,7 +30,7 @@ module.exports = {
     const toggle = interaction.options.getString('toggle')
 
     try {
-      const fileData = await fs.readFile(filePath, 'utf8')
+      const fileData = await fs.readFileSync(filePath, 'utf8')
       const data = JSON.parse(fileData)
       data.config.enabled = toggle === 'true' ? true : false
 

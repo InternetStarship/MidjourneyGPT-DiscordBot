@@ -1,0 +1,1594 @@
+{
+  "folders": {
+    "photo": [
+      {
+        "animals": [
+          "dogs",
+          "cats",
+          "birds",
+          "fish",
+          "reptiles",
+          "insects",
+          "wild animals",
+          "pets",
+          "farm animals",
+          "exotic animals"
+        ]
+      },
+      {
+        "landscapes": [
+          "mountains",
+          "forests",
+          "beaches",
+          "deserts",
+          "waterfalls",
+          "rivers",
+          "lakes",
+          "gardens",
+          "sunsets",
+          "countryside"
+        ]
+      },
+      {
+        "architecture": [
+          "modern",
+          "historical",
+          "interior",
+          "exterior",
+          "skyscrapers",
+          "bridges",
+          "monuments",
+          "churches",
+          "urban",
+          "residential"
+        ]
+      },
+      {
+        "cityscapes": [
+          "skylines",
+          "urban",
+          "night",
+          "day",
+          "aerial",
+          "street",
+          "buildings",
+          "bridges",
+          "parks",
+          "suburbs"
+        ]
+      },
+      {
+        "portraits": [
+          "headshots",
+          "group",
+          "candid",
+          "studio",
+          "lifestyle",
+          "weddings",
+          "fashion",
+          "children",
+          "seniors",
+          "maternity"
+        ]
+      },
+      {
+        "sports": [
+          "football",
+          "basketball",
+          "baseball",
+          "soccer",
+          "hockey",
+          "tennis",
+          "golf",
+          "swimming",
+          "martial arts",
+          "racing"
+        ]
+      },
+      {
+        "events": [
+          "weddings",
+          "parties",
+          "concerts",
+          "festivals",
+          "corporate",
+          "sports",
+          "ceremonies",
+          "conventions",
+          "political",
+          "charity"
+        ]
+      },
+      {
+        "street": [
+          "urban",
+          "candid",
+          "people",
+          "architecture",
+          "vehicles",
+          "graffiti",
+          "night",
+          "day",
+          "city life",
+          "alleyways"
+        ]
+      },
+      {
+        "travel": [
+          "landmarks",
+          "nature",
+          "cities",
+          "cultures",
+          "people",
+          "food",
+          "architecture",
+          "transportation",
+          "wildlife",
+          "historic sites"
+        ]
+      },
+      {
+        "macro": [
+          "flowers",
+          "insects",
+          "textures",
+          "water droplets",
+          "food",
+          "crystals",
+          "jewelry",
+          "small objects",
+          "details",
+          "patterns"
+        ]
+      }
+    ],
+    "painting": [
+      {
+        "landscape": [
+          "cubism",
+          "modern",
+          "impressionist",
+          "realism",
+          "expressionist",
+          "surrealist",
+          "romantic",
+          "baroque",
+          "abstract",
+          "minimalist"
+        ]
+      },
+      {
+        "portrait": [
+          "classical",
+          "contemporary",
+          "realism",
+          "expressionist",
+          "surrealist",
+          "pop art",
+          "cubist",
+          "impressionist",
+          "rococo",
+          "neoclassical"
+        ]
+      },
+      {
+        "abstract": [
+          "geometric",
+          "expressionist",
+          "minimalist",
+          "color field",
+          "lyrical",
+          "hard-edge",
+          "suprematism",
+          "neoplasticism",
+          "tachisme",
+          "action painting"
+        ]
+      },
+      {
+        "still life": [
+          "realism",
+          "impressionist",
+          "cubist",
+          "expressionist",
+          "pop art",
+          "trompe-l'oeil",
+          "neoclassical",
+          "baroque",
+          "symbolism",
+          "pointillism"
+        ]
+      },
+      {
+        "conceptual": [
+          "installation",
+          "performance",
+          "body art",
+          "land art",
+          "photography",
+          "video art",
+          "sound art",
+          "mail art",
+          "text-based",
+          "digital"
+        ]
+      },
+      {
+        "modern": [
+          "abstract expressionism",
+          "pop art",
+          "minimalism",
+          "op art",
+          "photorealism",
+          "street art",
+          "fluxus",
+          "art informel",
+          "fauvism",
+          "dada"
+        ]
+      },
+      {
+        "historical": [
+          "ancient",
+          "medieval",
+          "renaissance",
+          "baroque",
+          "romanticism",
+          "neoclassical",
+          "rococo",
+          "gothic",
+          "pre-historic",
+          "byzantine"
+        ]
+      },
+      {
+        "impressionist": [
+          "post-impressionist",
+          "pointillism",
+          "divisionism",
+          "neo-impressionism",
+          "plein air",
+          "luminism",
+          "tonalism",
+          "symbolism",
+          "orientalism",
+          "japonisme"
+        ]
+      },
+      {
+        "surrealist": [
+          "metaphysical",
+          "automatic",
+          "biomorphism",
+          "dream",
+          "psychic automatism",
+          "abstract",
+          "figurative",
+          "veristic",
+          "dada",
+          "visionary"
+        ]
+      },
+      {
+        "realism": [
+          "social realism",
+          "magical realism",
+          "hyperrealism",
+          "photorealism",
+          "academic",
+          "naturalism",
+          "verismo",
+          "neo-realism",
+          "regionalism",
+          "socialist"
+        ]
+      }
+    ],
+    "app-ui": [
+      {
+        "dashboard": [
+          "analytics",
+          "e-commerce",
+          "social media",
+          "project management",
+          "admin",
+          "finance",
+          "healthcare",
+          "education",
+          "travel",
+          "entertainment"
+        ]
+      },
+      {
+        "navigation": [
+          "topbar",
+          "sidebar",
+          "breadcrumb",
+          "mega menu",
+          "hamburger menu",
+          "tabbed",
+          "paged",
+          "vertical",
+          "sticky",
+          "collapsible"
+        ]
+      },
+      {
+        "login": [
+          "minimal",
+          "full-screen",
+          "modal",
+          "two-factor",
+          "social",
+          "animated",
+          "split-screen",
+          "illustrated",
+          "dark mode",
+          "light mode"
+        ]
+      },
+      {
+        "registration": [
+          "step-by-step",
+          "single page",
+          "modal",
+          "social",
+          "email",
+          "phone",
+          "dark mode",
+          "light mode",
+          "illustrated",
+          "custom fields"
+        ]
+      },
+      {
+        "profile": [
+          "user card",
+          "timeline",
+          "portfolio",
+          "social",
+          "business",
+          "education",
+          "medical",
+          "personal",
+          "avatar",
+          "cover photo"
+        ]
+      },
+      {
+        "settings": [
+          "general",
+          "account",
+          "security",
+          "privacy",
+          "notifications",
+          "billing",
+          "preferences",
+          "appearance",
+          "language",
+          "customization"
+        ]
+      },
+      {
+        "buttons": [
+          "flat",
+          "raised",
+          "outline",
+          "floating",
+          "icon",
+          "social",
+          "rounded",
+          "pill",
+          "ghost",
+          "block"
+        ]
+      },
+      {
+        "forms": [
+          "contact",
+          "subscription",
+          "feedback",
+          "checkout",
+          "search",
+          "file upload",
+          "survey",
+          "advanced",
+          "inline",
+          "validation"
+        ]
+      },
+      {
+        "notifications": [
+          "alerts",
+          "toast",
+          "snackbar",
+          "modal",
+          "badge",
+          "popup",
+          "banner",
+          "status bar",
+          "inline",
+          "confirmation"
+        ]
+      },
+      {
+        "widgets": [
+          "calendar",
+          "carousel",
+          "chart",
+          "map",
+          "card",
+          "table",
+          "slider",
+          "accordion",
+          "progress bar",
+          "modal"
+        ]
+      }
+    ],
+    "landing-page": [
+      {
+        "corporate": [
+          "finance",
+          "consulting",
+          "legal",
+          "human resources",
+          "manufacturing",
+          "real estate",
+          "construction",
+          "healthcare",
+          "logistics",
+          "energy"
+        ]
+      },
+      {
+        "e-commerce": [
+          "fashion",
+          "electronics",
+          "furniture",
+          "sports",
+          "beauty",
+          "food",
+          "books",
+          "art",
+          "toys",
+          "automotive"
+        ]
+      },
+      {
+        "portfolio": [
+          "designer",
+          "developer",
+          "photographer",
+          "writer",
+          "artist",
+          "musician",
+          "actor",
+          "architect",
+          "filmmaker",
+          "model"
+        ]
+      },
+      {
+        "blog": [
+          "personal",
+          "travel",
+          "food",
+          "lifestyle",
+          "technology",
+          "fashion",
+          "business",
+          "health",
+          "education",
+          "sports"
+        ]
+      },
+      {
+        "agency": [
+          "marketing",
+          "advertising",
+          "web design",
+          "creative",
+          "public relations",
+          "branding",
+          "content",
+          "social media",
+          "event planning",
+          "seo"
+        ]
+      },
+      {
+        "event": [
+          "conference",
+          "webinar",
+          "workshop",
+          "festival",
+          "concert",
+          "wedding",
+          "exhibition",
+          "meetup",
+          "charity",
+          "sports"
+        ]
+      },
+      {
+        "charity": [
+          "nonprofit",
+          "fundraising",
+          "ngo",
+          "environment",
+          "animals",
+          "education",
+          "health",
+          "community",
+          "religious",
+          "human rights"
+        ]
+      },
+      {
+        "education": [
+          "online courses",
+          "school",
+          "university",
+          "e-learning",
+          "tutorials",
+          "library",
+          "language",
+          "testing",
+          "student resources",
+          "training"
+        ]
+      },
+      {
+        "technology": [
+          "startup",
+          "saas",
+          "mobile app",
+          "artificial intelligence",
+          "virtual reality",
+          "blockchain",
+          "cybersecurity",
+          "internet of things",
+          "cloud services",
+          "software"
+        ]
+      },
+      {
+        "travel": [
+          "tourism",
+          "hotel",
+          "booking",
+          "destination",
+          "vacation rental",
+          "adventure",
+          "cruise",
+          "airline",
+          "tour operator",
+          "travel agency"
+        ]
+      }
+    ],
+    "ios-icon": [
+      {
+        "social": [
+          "messaging",
+          "photo sharing",
+          "video sharing",
+          "dating",
+          "professional networking",
+          "community",
+          "microblogging",
+          "interest-based",
+          "social gaming",
+          "forums"
+        ]
+      },
+      {
+        "food": [
+          "fruits",
+          "vegetables",
+          "fast food",
+          "snacks",
+          "drinks",
+          "desserts",
+          "candy",
+          "cuisine",
+          "breakfast",
+          "lunch"
+        ]
+      },
+      {
+        "technology": [
+          "gadgets",
+          "devices",
+          "computers",
+          "smartphones",
+          "tablets",
+          "gaming",
+          "wearables",
+          "networking",
+          "innovation",
+          "startups"
+        ]
+      },
+      {
+        "entertainment": [
+          "streaming",
+          "music",
+          "movies",
+          "tv shows",
+          "gaming",
+          "sports",
+          "books",
+          "comics",
+          "radio",
+          "podcasts"
+        ]
+      },
+      {
+        "productivity": [
+          "task management",
+          "calendar",
+          "note-taking",
+          "file management",
+          "project management",
+          "email",
+          "collaboration",
+          "time tracking",
+          "finance",
+          "writing"
+        ]
+      },
+      {
+        "news": [
+          "breaking news",
+          "local",
+          "national",
+          "world",
+          "business",
+          "technology",
+          "sports",
+          "entertainment",
+          "lifestyle",
+          "science"
+        ]
+      },
+      {
+        "weather": [
+          "forecast",
+          "radar",
+          "severe alerts",
+          "hourly",
+          "daily",
+          "weather maps",
+          "air quality",
+          "tides",
+          "astronomy",
+          "ski and snow"
+        ]
+      },
+      {
+        "shopping": [
+          "online stores",
+          "price comparison",
+          "coupons",
+          "gift cards",
+          "groceries",
+          "auction",
+          "classifieds",
+          "fashion",
+          "electronics",
+          "home goods"
+        ]
+      },
+      {
+        "health": [
+          "medical reference",
+          "symptom checker",
+          "medication tracking",
+          "first aid",
+          "telemedicine",
+          "nutrition",
+          "mental health",
+          "pregnancy",
+          "sleep",
+          "disease management"
+        ]
+      },
+      {
+        "fitness": [
+          "workout",
+          "yoga",
+          "running",
+          "cycling",
+          "swimming",
+          "hiking",
+          "strength training",
+          "weight loss",
+          "nutrition",
+          "meditation"
+        ]
+      },
+      {
+        "education": [
+          "online courses",
+          "language learning",
+          "coding",
+          "test prep",
+          "kids",
+          "reference",
+          "math",
+          "science",
+          "history",
+          "art"
+        ]
+      },
+      {
+        "travel": [
+          "booking",
+          "accommodation",
+          "transportation",
+          "city guides",
+          "trip planning",
+          "flight tracking",
+          "currency converter",
+          "local experiences",
+          "language translation",
+          "maps"
+        ]
+      }
+    ],
+    "icon": [
+      {
+        "social media": [
+          "Facebook",
+          "Twitter",
+          "Instagram",
+          "LinkedIn",
+          "Pinterest",
+          "Snapchat",
+          "YouTube",
+          "TikTok",
+          "Reddit",
+          "WhatsApp"
+        ]
+      },
+      {
+        "communication": [
+          "email",
+          "phone",
+          "chat",
+          "video call",
+          "texting",
+          "voicemail",
+          "fax",
+          "comment",
+          "group chat",
+          "file sharing"
+        ]
+      },
+      {
+        "multimedia": [
+          "audio",
+          "video",
+          "image",
+          "playlist",
+          "gallery",
+          "streaming",
+          "microphone",
+          "camera",
+          "speaker",
+          "volume"
+        ]
+      },
+      {
+        "devices": [
+          "smartphone",
+          "tablet",
+          "laptop",
+          "desktop",
+          "smartwatch",
+          "television",
+          "gaming console",
+          "headphones",
+          "printer",
+          "router"
+        ]
+      },
+      {
+        "shopping": [
+          "cart",
+          "basket",
+          "checkout",
+          "wallet",
+          "credit card",
+          "store",
+          "barcode",
+          "qr code",
+          "gift",
+          "discount"
+        ]
+      },
+      {
+        "business": [
+          "briefcase",
+          "analytics",
+          "pie chart",
+          "meeting",
+          "calendar",
+          "clock",
+          "document",
+          "presentation",
+          "target",
+          "handshake"
+        ]
+      },
+      {
+        "healthcare": [
+          "stethoscope",
+          "heart",
+          "cross",
+          "medicine",
+          "ambulance",
+          "wheelchair",
+          "bandage",
+          "syringe",
+          "dna",
+          "hospital"
+        ]
+      },
+      {
+        "transportation": [
+          "car",
+          "bus",
+          "train",
+          "plane",
+          "ship",
+          "bicycle",
+          "scooter",
+          "truck",
+          "motorcycle",
+          "subway"
+        ]
+      },
+      {
+        "nature": [
+          "tree",
+          "leaf",
+          "flower",
+          "sun",
+          "moon",
+          "star",
+          "cloud",
+          "rain",
+          "snowflake",
+          "mountain"
+        ]
+      },
+      {
+        "food": [
+          "apple",
+          "burger",
+          "pizza",
+          "cake",
+          "drink",
+          "cutlery",
+          "plate",
+          "cup",
+          "ice cream",
+          "chef hat"
+        ]
+      }
+    ],
+    "product": [
+      {
+        "clothing": [
+          "t-shirts",
+          "pants",
+          "dresses",
+          "jackets",
+          "sweaters",
+          "activewear",
+          "underwear",
+          "swimwear",
+          "suits",
+          "skirts"
+        ]
+      },
+      {
+        "accessories": [
+          "bags",
+          "watches",
+          "jewelry",
+          "sunglasses",
+          "hats",
+          "belts",
+          "scarves",
+          "gloves",
+          "wallets",
+          "ties"
+        ]
+      },
+      {
+        "shoes": [
+          "sneakers",
+          "boots",
+          "heels",
+          "sandals",
+          "flats",
+          "running",
+          "slippers",
+          "loafers",
+          "wedges",
+          "formal"
+        ]
+      },
+      {
+        "electronics": [
+          "smartphones",
+          "tablets",
+          "laptops",
+          "cameras",
+          "headphones",
+          "gaming consoles",
+          "smartwatches",
+          "drones",
+          "speakers",
+          "printers"
+        ]
+      },
+      {
+        "furniture": [
+          "sofas",
+          "chairs",
+          "tables",
+          "beds",
+          "desks",
+          "shelves",
+          "cabinets",
+          "dressers",
+          "nightstands",
+          "mattresses"
+        ]
+      },
+      {
+        "appliances": [
+          "refrigerators",
+          "ovens",
+          "dishwashers",
+          "washing machines",
+          "dryers",
+          "vacuum cleaners",
+          "microwaves",
+          "air conditioners",
+          "fans",
+          "toasters"
+        ]
+      },
+      {
+        "automotive": [
+          "cars",
+          "motorcycles",
+          "trucks",
+          "bicycles",
+          "scooters",
+          "atvs",
+          "boats",
+          "rvs",
+          "tires",
+          "parts"
+        ]
+      },
+      {
+        "sports": [
+          "basketball",
+          "soccer",
+          "football",
+          "tennis",
+          "golf",
+          "swimming",
+          "cycling",
+          "running",
+          "skiing",
+          "hiking"
+        ]
+      },
+      {
+        "toys": [
+          "action figures",
+          "dolls",
+          "board games",
+          "puzzles",
+          "stuffed animals",
+          "lego",
+          "remote control",
+          "educational",
+          "building sets",
+          "art supplies"
+        ]
+      },
+      {
+        "cosmetics": [
+          "makeup",
+          "skincare",
+          "haircare",
+          "nail care",
+          "fragrances",
+          "bath",
+          "body",
+          "oral care",
+          "shaving",
+          "grooming"
+        ]
+      }
+    ],
+    "logo": [
+      {
+        "corporate": [
+          "finance",
+          "technology",
+          "healthcare",
+          "education",
+          "real estate",
+          "consulting",
+          "retail",
+          "construction",
+          "transportation",
+          "hospitality"
+        ]
+      },
+      {
+        "minimal": [
+          "simple shapes",
+          "line art",
+          "monochrome",
+          "single color",
+          "negative space",
+          "sans-serif",
+          "clean",
+          "modern",
+          "subtle gradients",
+          "minimalist icons"
+        ]
+      },
+      {
+        "flat": [
+          "simple shapes",
+          "solid colors",
+          "minimal details",
+          "no gradients",
+          "no shadows",
+          "clean lines",
+          "flat icons",
+          "modern",
+          "user interface",
+          "material design"
+        ]
+      },
+      {
+        "abstract": [
+          "geometric shapes",
+          "curves",
+          "patterns",
+          "asymmetry",
+          "non-representational",
+          "colorful",
+          "expressive",
+          "dynamic",
+          "conceptual",
+          "minimal"
+        ]
+      },
+      {
+        "vintage": [
+          "retro",
+          "old-fashioned",
+          "classic",
+          "nostalgic",
+          "antique",
+          "hand-drawn",
+          "grunge",
+          "typography",
+          "ornate",
+          "distressed"
+        ]
+      },
+      {
+        "letter-based": [
+          "monogram",
+          "initials",
+          "wordmark",
+          "letterforms",
+          "acronym",
+          "negative space",
+          "stylized",
+          "typographic",
+          "minimal",
+          "creative"
+        ]
+      },
+      {
+        "typographic": [
+          "serif",
+          "sans-serif",
+          "script",
+          "display",
+          "handwritten",
+          "custom",
+          "decorative",
+          "combination",
+          "hierarchy",
+          "contrast"
+        ]
+      },
+      {
+        "geometric": [
+          "circles",
+          "triangles",
+          "squares",
+          "rectangles",
+          "hexagons",
+          "lines",
+          "arcs",
+          "patterns",
+          "symmetry",
+          "asymmetry"
+        ]
+      },
+      {
+        "mascot": [
+          "animals",
+          "people",
+          "cartoon",
+          "fantasy",
+          "characters",
+          "brand",
+          "sports",
+          "fun",
+          "playful",
+          "colorful"
+        ]
+      },
+      {
+        "emblem": [
+          "badge",
+          "shield",
+          "crest",
+          "insignia",
+          "seal",
+          "stamp",
+          "symbol",
+          "coat of arms",
+          "ornate",
+          "circular"
+        ]
+      }
+    ],
+    "illustration": [
+      {
+        "character": [
+          "human",
+          "animal",
+          "fantasy",
+          "robot",
+          "cartoon",
+          "realistic",
+          "stylized",
+          "comic",
+          "sci-fi",
+          "historical"
+        ]
+      },
+      {
+        "concept art": [
+          "environments",
+          "characters",
+          "props",
+          "vehicles",
+          "architecture",
+          "sketches",
+          "digital painting",
+          "thumbnails",
+          "mood boards",
+          "color studies"
+        ]
+      },
+      {
+        "editorial": [
+          "magazines",
+          "newspapers",
+          "online articles",
+          "blogs",
+          "opinion pieces",
+          "interviews",
+          "reviews",
+          "political",
+          "social issues",
+          "culture"
+        ]
+      },
+      {
+        "infographic": [
+          "data visualization",
+          "charts",
+          "graphs",
+          "maps",
+          "timelines",
+          "process",
+          "comparison",
+          "hierarchy",
+          "statistics",
+          "educational"
+        ]
+      },
+      {
+        "storyboard": [
+          "film",
+          "animation",
+          "commercials",
+          "music videos",
+          "comics",
+          "concept development",
+          "scene layouts",
+          "sequence",
+          "camera angles",
+          "motion"
+        ]
+      },
+      {
+        "book cover": [
+          "fiction",
+          "non-fiction",
+          "children's books",
+          "young adult",
+          "classics",
+          "science fiction",
+          "fantasy",
+          "biography",
+          "history",
+          "self-help"
+        ]
+      },
+      {
+        "poster": [
+          "movie",
+          "music",
+          "event",
+          "theatre",
+          "exhibition",
+          "travel",
+          "propaganda",
+          "vintage",
+          "minimal",
+          "typographic"
+        ]
+      },
+      {
+        "greeting card": [
+          "birthday",
+          "wedding",
+          "anniversary",
+          "thank you",
+          "holiday",
+          "get well",
+          "sympathy",
+          "congratulations",
+          "baby",
+          "invitation"
+        ]
+      },
+      {
+        "web": [
+          "banners",
+          "icons",
+          "social media",
+          "UI elements",
+          "email templates",
+          "infographics",
+          "hero images",
+          "backgrounds",
+          "landing pages",
+          "ads"
+        ]
+      },
+      {
+        "technical": [
+          "diagrams",
+          "blueprints",
+          "schematics",
+          "patents",
+          "instruction manuals",
+          "product design",
+          "architecture",
+          "cutaways",
+          "exploded views",
+          "scientific"
+        ]
+      }
+    ],
+    "mascot": [
+      {
+        "animals": [
+          "dogs",
+          "cats",
+          "birds",
+          "fish",
+          "reptiles",
+          "insects",
+          "wild animals",
+          "pets",
+          "farm animals",
+          "exotic animals"
+        ]
+      },
+      {
+        "robots": [
+          "androids",
+          "cyborgs",
+          "mechs",
+          "drones",
+          "transformers",
+          "futuristic",
+          "retro",
+          "steampunk",
+          "nano",
+          "AI characters"
+        ]
+      },
+      {
+        "humans": [
+          "children",
+          "adults",
+          "elderly",
+          "occupations",
+          "athletes",
+          "cartoon",
+          "realistic",
+          "stylized",
+          "cultural",
+          "historical"
+        ]
+      },
+      {
+        "fantasy": [
+          "elves",
+          "dwarves",
+          "orcs",
+          "dragons",
+          "fairies",
+          "wizards",
+          "warriors",
+          "monsters",
+          "mythological",
+          "magic"
+        ]
+      },
+      {
+        "mythical": [
+          "unicorns",
+          "phoenix",
+          "mermaids",
+          "centaurs",
+          "minotaurs",
+          "griffins",
+          "chimeras",
+          "gorgons",
+          "werewolves",
+          "vampires"
+        ]
+      },
+      {
+        "sports": [
+          "football",
+          "basketball",
+          "baseball",
+          "soccer",
+          "hockey",
+          "tennis",
+          "golf",
+          "swimming",
+          "martial arts",
+          "racing"
+        ]
+      },
+      {
+        "corporate": [
+          "technology",
+          "finance",
+          "healthcare",
+          "education",
+          "real estate",
+          "consulting",
+          "retail",
+          "construction",
+          "transportation",
+          "hospitality"
+        ]
+      },
+      {
+        "school": [
+          "elementary",
+          "middle",
+          "high",
+          "college",
+          "university",
+          "academy",
+          "mascot costumes",
+          "traditions",
+          "spirit",
+          "community"
+        ]
+      },
+      {
+        "food": [
+          "fruits",
+          "vegetables",
+          "fast food",
+          "snacks",
+          "drinks",
+          "desserts",
+          "candy",
+          "cuisine",
+          "breakfast",
+          "lunch"
+        ]
+      },
+      {
+        "technology": [
+          "gadgets",
+          "devices",
+          "computers",
+          "smartphones",
+          "tablets",
+          "gaming",
+          "wearables",
+          "networking",
+          "innovation",
+          "startups"
+        ]
+      }
+    ],
+    "background": [
+      {
+        "abstract": [
+          "shapes",
+          "lines",
+          "curves",
+          "swirls",
+          "fractals",
+          "noise",
+          "grunge",
+          "blur",
+          "bokeh",
+          "colorful"
+        ]
+      },
+      {
+        "nature": [
+          "forests",
+          "mountains",
+          "beaches",
+          "deserts",
+          "waterfalls",
+          "rivers",
+          "lakes",
+          "gardens",
+          "sunsets",
+          "clouds"
+        ]
+      },
+      {
+        "cityscape": [
+          "skylines",
+          "architecture",
+          "urban",
+          "night",
+          "day",
+          "aerial",
+          "street",
+          "buildings",
+          "bridges",
+          "parks"
+        ]
+      },
+      {
+        "pattern": [
+          "geometric",
+          "stripes",
+          "dots",
+          "floral",
+          "chevron",
+          "zigzag",
+          "paisley",
+          "tribal",
+          "animal print",
+          "plaid"
+        ]
+      },
+      {
+        "textures": [
+          "wood",
+          "metal",
+          "paper",
+          "fabric",
+          "stone",
+          "brick",
+          "concrete",
+          "marble",
+          "sand",
+          "rust"
+        ]
+      },
+      {
+        "gradient": [
+          "linear",
+          "radial",
+          "angular",
+          "diamond",
+          "reflected",
+          "single color",
+          "two colors",
+          "multicolor",
+          "smooth",
+          "hard edges"
+        ]
+      },
+      {
+        "minimal": [
+          "simple",
+          "clean",
+          "monochrome",
+          "subtle",
+          "geometry",
+          "lines",
+          "flat colors",
+          "negative space",
+          "minimalist",
+          "uncluttered"
+        ]
+      },
+      {
+        "geometric": [
+          "circles",
+          "squares",
+          "triangles",
+          "hexagons",
+          "polygons",
+          "lines",
+          "arcs",
+          "spirals",
+          "symmetry",
+          "asymmetry"
+        ]
+      },
+      {
+        "sky": [
+          "blue",
+          "clouds",
+          "sunrise",
+          "sunset",
+          "stormy",
+          "rainbows",
+          "stars",
+          "night",
+          "day",
+          "atmosphere"
+        ]
+      },
+      {
+        "space": [
+          "stars",
+          "galaxies",
+          "nebulae",
+          "planets",
+          "moon",
+          "comets",
+          "asteroids",
+          "black holes",
+          "milky way",
+          "deep space"
+        ]
+      }
+    ]
+  }
+}
