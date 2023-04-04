@@ -10,8 +10,7 @@
     "Logo": "logo of a [subject] in [style] style, high quality, 4k, [background] background",
     "Illustration": "illustration of a [subject] in [style] style on [background] background",
     "Company Mascot": "company mascot of a [subject] in [style] style on [background] background",
-    "Background": "background for [subject], [style] style, high quality, 4k",
-    "testing": "hey edited again"
+    "Background": "background for [subject], [style] style, high quality, 4k"
   },
   "config": {
     "enabled": true
