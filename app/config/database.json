@@ -20,7 +20,8 @@
     "Pattern": "pattern design for [subject], [style] style, high quality, [background] background --tile",
     "Album Cover": "album cover featuring [subject], designed in [style] style, high-quality visuals, set against a [background] backdrop, and incorporating [complementary element] to enhance the concept ",
     "Avatar": "avatar of [subject], in [style] style, high-resolution, featuring a [background] background, with [subject] engaged in [action]",
-    "Full": "[Subject], [Adjective], [Setting], [Art style], [Type of art], [Texture], [Visual style], [Presentation format], [Color scheme], [Subculture], [Lighting], [Realism level], [Detail], [Environment], [Software], [Resolution]"
+    "Full": "[Subject], [Adjective], [Setting], [Art style], [Type of art], [Texture], [Visual style], [Presentation format], [Color scheme], [Subculture], [Lighting], [Realism level], [Detail], [Environment], [Software], [Resolution]",
+    "Knolled": "A visually stunning knoll of [subject] photographed from above, with dramatic [type of lighting] lighting and [type of lens] lens"
   },
   "config": {
     "auto_upload": true

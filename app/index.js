@@ -52,6 +52,23 @@ for (const folder of commandFolders) {
 }
 
 client.on(Events.InteractionCreate, async interaction => {
+  if (interaction.isAutocomplete()) {
+    const autoCompleteCommand = interaction.client.commands.get(
+      interaction.commandName
+    )
+
+    if (!autoCompleteCommand) {
+      console.error(`No command matching ${interaction.commandName} was found.`)
+      return
+    }
+
+    try {
+      await autoCompleteCommand.autocomplete(interaction)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   if (!interaction.isChatInputCommand()) return
 
   const command = client.commands.get(interaction.commandName)

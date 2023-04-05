@@ -76,7 +76,11 @@ const generate = async draft => {
     },
     {
       role: 'user',
-      content: `Give 4 Midjourney mad-lib formulas for this: "${draft}" 
+      content: `Give 4 Midjourney mad-lib formulas for this.
+      
+      "${draft}" 
+
+      Remember always output in provided format:
 
       **Formula 1:**
       \`\`\`/imagine prompt: [replace with Formula here]\`\`\`

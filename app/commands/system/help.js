@@ -22,9 +22,9 @@ module.exports = {
 \> Any attribute can be edited in the **advanced** input in the **/prompt-formula** command. You can use the following format to edit any dynamic attribute in the formula like this \`[time of day=night]\` or \`[perspective=far]\` and so on depending what is in the formula. 
 
 \> **Add & Delete Formulas**
-\> You can add and delete formulas in the **/formula-add** command. Max 25 formulas. You can view the formula by using the **/formula-view** command to get an explanation of what each formula and it's attributes.
+\> You can add and delete formulas in the **/formula-add** command. You can view the formula by using the **/formula-view** command to get an explanation of what each formula and it's attributes.
 
-**Loaded Formulas (${count}/25)**
+**Loaded Formulas (${count})**
 ${formulas}`)
   },
 }

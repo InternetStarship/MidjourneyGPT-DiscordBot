@@ -12,15 +12,9 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 const { formulas } = require('../../config/database.json')
-const options = Object.entries(formulas).map(([key, value]) => {
-  return {
-    name: key,
-    value: key,
-  }
-})
 
 const data = new SlashCommandBuilder()
-  .setName('formula-prompt')
+  .setName('formula-imagine')
   .setDescription(
     'Build prompts for Midjourney using your formulas with ChatGPT.'
   )
@@ -29,12 +23,9 @@ data.addStringOption(option =>
   option
     .setName('formula')
     .setDescription(`Pick a formula to use.`)
+    .setAutocomplete(true)
     .setRequired(true)
 )
-
-options.forEach(cat => {
-  data.options[0].addChoices(cat)
-})
 
 data.addStringOption(option =>
   option
@@ -69,7 +60,13 @@ data.addStringOption(option =>
 
 data.addStringOption(option =>
   option
-    .setName('variables')
+    .setName('count')
+    .setDescription('How many variations to generate? (default: 7)')
+)
+
+data.addStringOption(option =>
+  option
+    .setName('advanced')
     .setDescription(
       'Advanced customization of the prompt, see /help to learn more.'
     )
@@ -77,13 +74,26 @@ data.addStringOption(option =>
 
 module.exports = {
   data: data,
+  async autocomplete(interaction) {
+    const focusedValue = interaction.options.getFocused()
+    const choices = Object.entries(formulas).map(([key, value]) => {
+      return key
+    })
+    const filtered = choices.filter(choice =>
+      choice.toLowerCase().includes(focusedValue.toLowerCase())
+    )
+    await interaction.respond(
+      filtered.map(choice => ({ name: choice, value: choice }))
+    )
+  },
   async execute(interaction) {
     const formula = interaction.options.getString('formula')
     const subject = interaction.options.getString('subject')
     const style = interaction.options.getString('style')
-    const variables = interaction.options.getString('variables')
+    const advanced = interaction.options.getString('advanced')
     const background = interaction.options.getString('background')
     const aspectRatio = interaction.options.getString('aspect-ratio')
+    const count = interaction.options.getString('count') || 7
 
     if (!formula) return interaction.reply('Please provide a formula.')
     if (!subject) return interaction.reply('Please provide a subject.')
@@ -96,9 +106,9 @@ module.exports = {
         formula,
         subject,
         style,
-        variables,
+        advanced,
         background,
-        7,
+        count,
         aspectRatio
       )
     )
@@ -109,13 +119,13 @@ async function generate(
   formula,
   subject,
   style,
-  variables,
+  advanced,
   background,
   count,
   aspectRatio
 ) {
   const selectedFormula = formulas[formula]
-  const result = replacePlaceholders(selectedFormula, variables)
+  const result = replacePlaceholders(selectedFormula, advanced)
   const content = result
     .replace('[subject]', `[${subject}]`)
     .replace('[style]', `[${style}]`)
