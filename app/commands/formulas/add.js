@@ -52,6 +52,7 @@ module.exports = {
 
       await fs.writeFile(filePath, JSON.stringify(data, null, 2), () => {
         console.log('Updated database.json file.')
+        console.log('File data:', fileData)
       })
 
       return interaction.reply(`✅\n\n**Added formula to database.**`)
