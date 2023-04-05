@@ -7,7 +7,7 @@ const { SlashCommandBuilder } = require('discord.js')
 const cloudinary = require('cloudinary')
 
 const data = new SlashCommandBuilder()
-  .setName('upload-file')
+  .setName('upload-file-to-cloudinary')
   .setDescription('Upload a file to Cloudinary folder.')
 
 data.addStringOption(option =>
@@ -42,15 +42,16 @@ module.exports = {
 
 async function upload(file, folder = '') {
   const path = `${process.env.CLOUDINARY_FOLDER}/${folder}`
+  const data = {
+    folder: path,
+  }
 
   return await cloudinary.v2.uploader
-    .unsigned_upload(file, process.env.CLOUDINARY_UPLOAD_PRESET, {
-      folder: path,
-    })
+    .unsigned_upload(file, process.env.CLOUDINARY_UPLOAD_PRESET, data)
     .then(response => {
       return `🤖\n**Successfully Uploaded** \`\`\`${response.secure_url}\`\`\` `
     })
     .catch(error => {
-      return `🪳\n**Error Uploading** \`\`\`${error}\`\`\` `
+      return `🪳\n**Error Uploading** \`\`\`${error.message}\`\`\` `
     })
 }

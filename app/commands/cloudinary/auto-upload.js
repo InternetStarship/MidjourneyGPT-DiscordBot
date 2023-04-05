@@ -4,10 +4,10 @@
  */
 
 const { SlashCommandBuilder } = require('discord.js')
-const fs = require('fs').promises
+const fs = require('node:fs')
 
 const data = new SlashCommandBuilder()
-  .setName('upload-auto-toggle')
+  .setName('upload-auto-toggle-cloudinary')
   .setDescription(
     'Automatically upload images to Cloudinary with ChatGPT suggested folders.'
   )
@@ -33,12 +33,16 @@ module.exports = {
       const fileData = await fs.readFileSync(filePath, 'utf8')
       const data = JSON.parse(fileData)
 
-      data.config.enabled = toggle === 'true' ? true : false
-      await fs.writeFile(filePath, JSON.stringify(data, null, 2))
+      data.config.auto_upload = toggle && toggle === 'true' ? true : false
 
-      const response = data.config.enabled
+      await fs.writeFile(filePath, JSON.stringify(data, null, 2), () => {
+        console.log('Updated database.json file.')
+      })
+
+      const response = data.config.auto_upload
         ? '✅ Auto-upload enabled.'
         : '❌ Auto-upload disabled.'
+
       return interaction.reply(response)
     } catch (err) {
       const response =

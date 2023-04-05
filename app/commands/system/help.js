@@ -8,30 +8,35 @@ const { formulas } = require('../../config/database.json')
 
 module.exports = {
   data: new SlashCommandBuilder()
-    .setName('help')
+    .setName('formula-help')
     .setDescription('Learn how this bot works.'),
   async execute(interaction) {
-    return interaction.reply(`/help\n
-**MidjourneyGPT**
-\> This bot is designed to connect to **ChatGPT** and generate prompts for **Midjourney** then upload the results to **Cloudinary**.
-\> 
-\> ** Advanced Editing **
-\> Any attribute can be edited in the **advanced** input in the **/auto-imagine** command. You can use the following format to edit any dynamic attribute in the formula like this \`[time of day=night]\` or \`[perspective=far]\` and you can combine them like this \`[time of day=night] [perspective=far]\` or \`[time of day=night] [perspective=far] [weather=rain]\` and so on depending what is in the formula.
-\> 
-\> ** Add Formulas **
-\> You can add new formulas by editing the \`app/config/database.json\` file as an administrator and then restarting the bot server or ask wynter@hey.com for help with your own private MidjourneyGPT bot.
+    const data = generateSimplifiedOutput()
+    const formulas = data.output
+    const count = data.count
 
-**Loaded Formulas**
-${generateSimplifiedOutput()}`)
+    return interaction.reply(`/help\n
+\> This bot is designed to connect to **ChatGPT** and generate prompts for **Midjourney** then auto-upload the upscaled images to a **Cloudinary** folder that is self organized by **ChatGPT**.
+
+\> **Advanced Editing**
+\> Any attribute can be edited in the **advanced** input in the **/prompt-formula** command. You can use the following format to edit any dynamic attribute in the formula like this \`[time of day=night]\` or \`[perspective=far]\` and so on depending what is in the formula. 
+
+\> **Add & Delete Formulas**
+\> You can add and delete formulas in the **/formula-add** command. Max 25 formulas. You can view the formula by using the **/formula-view** command to get an explanation of what each formula and it's attributes.
+
+**Loaded Formulas (${count}/25)**
+${formulas}`)
   },
 }
 
 function generateSimplifiedOutput(json) {
   let output = ''
+  let count = 0
 
   for (const key in formulas) {
+    count++
     output += `\>  →  **${key}**\n`
   }
 
-  return output
+  return { output, count }
 }

@@ -1,21 +1,21 @@
 {
   "formulas": {
-    "Photo": "Photograph of a [subject] [engaged in an action scene] with [background] background, during [time of day] with [type of lighting] and shot with a [type of lens] using [name of lens]",
-    "Painting": "Painting of a [subject] engaged in an [action] scene with [background] background, in the style of [style], viewed from [perspective]",
+    "Photo": "photograph of a [subject] [engaged in an action scene] with [background] background, during [time of day] with [type of lighting] and shot with a [type of lens] using [name of lens]",
+    "Painting": "painting of a [subject] engaged in an [action] scene with [background] background, in the style of [style], viewed from [perspective]",
     "App UI": "UI design, [subject] app, high quality, trending on Dribbble, Behance",
-    "Landing Page": "Engaging landing page for [subject], designed in [style] style, high-quality visuals, 4K resolution, featuring [key element] and [call to action]",
-    "iOS Icon": "High-resolution iOS app icon representing [subject], crafted in [style] style, set against a [background] backdrop, 4K quality, with [unique feature] and [additional detail]",
-    "Icon": "Distinctive icon for [subject], designed in [style] style, high-quality visuals, set against a [background] backdrop, incorporating [unique feature] and [additional element]",
+    "Landing Page": "engaging landing page for [subject], designed in [style] style, high-quality visuals, 4K resolution, featuring [key element] and [call to action]",
+    "iOS Icon": "high-resolution iOS app icon representing [subject], crafted in [style] style, set against a [background] backdrop, 4K quality, with [unique feature] and [additional detail]",
+    "Icon": "distinctive icon for [subject], designed in [style] style, high-quality visuals, set against a [background] backdrop, incorporating [unique feature] and [additional element]",
     "Product Shot": "Vivid product shot of [subject], high-quality, high-resolution, 4K, set against a [background] backdrop, showcasing [key feature] and [highlighted detail]",
-    "Product Mockup": "High-quality product mockup of a [subject] in [style] style, set against a [background] backdrop, featuring [key element] and [highlighted detail]",
-    "Logo": "Captivating logo featuring [subject], designed in [style] style, high-quality, 4K resolution, set against a [background] backdrop, and incorporating [unique element] and [additional detail]",
-    "Illustration": "Expressive illustration of [subject], created in [style] style on a [background] backdrop, highlighting [key feature] and [additional element]",
-    "Company Mascot": "Memorable company mascot based on [subject], designed in [style] style, set against a [background] backdrop, featuring [unique characteristic] and [additional detail]",
-    "Background": "Immersive background for [subject], designed in [style] style, high-quality, 4K resolution, showcasing [key element] and [additional feature]",
-    "3D Model": "Detailed 3D model of [subject] crafted in [style] style, featuring a [background] background",
-    "Pixel Art": "High-resolution pixel art representation of [subject] in [style] style, set on a [background] backdrop, showcasing intricate details",
-    "Character": "Imaginative character design based on [subject], created in [style] style, high-quality visuals, set against a [background] backdrop",
-    "Environment": "Environment concept art illustrating [subject] in [style] style, high-quality, 4K resolution, capturing a [unique atmosphere]",
+    "Product Mockup": "high-quality product mockup of a [subject] in [style] style, set against a [background] backdrop, featuring [key element] and [highlighted detail]",
+    "Logo": "captivating logo featuring [subject], designed in [style] style, high-quality, 4K resolution, set against a [background] backdrop, and incorporating [unique element] and [additional detail]",
+    "Illustration": "expressive illustration of [subject], created in [style] style on a [background] backdrop, highlighting [key feature] and [additional element]",
+    "Company Mascot": "memorable company mascot based on [subject], designed in [style] style, set against a [background] backdrop, featuring [unique characteristic] and [additional detail]",
+    "Background": "immersive background for [subject], designed in [style] style, high-quality, 4K resolution, showcasing [key element] and [additional feature]",
+    "3D Model": "detailed 3D model of [subject] crafted in [style] style, featuring a [background] background",
+    "Pixel Art": "high-resolution pixel art representation of [subject] in [style] style, set on a [background] backdrop, showcasing intricate details",
+    "Character": "imaginative character design based on [subject], created in [style] style, high-quality visuals, set against a [background] backdrop",
+    "Environment": "environment concept art illustrating [subject] in [style] style, high-quality, 4K resolution, capturing a [unique atmosphere]",
     "Vehicle": "innovative vehicle design inspired by [subject], rendered in [style] style with high-quality detail, set against a [background] backdrop, and featuring [distinctive feature] for a unique appearance",
     "Pattern": "pattern design for [subject], [style] style, high quality, [background] background --tile",
     "Album Cover": "album cover featuring [subject], designed in [style] style, high-quality visuals, set against a [background] backdrop, and incorporating [complementary element] to enhance the concept ",
@@ -23,6 +23,6 @@
     "Full": "[Subject], [Adjective], [Setting], [Art style], [Type of art], [Texture], [Visual style], [Presentation format], [Color scheme], [Subculture], [Lighting], [Realism level], [Detail], [Environment], [Software], [Resolution]"
   },
   "config": {
-    "enabled": true
+    "auto_upload": true
   }
 }

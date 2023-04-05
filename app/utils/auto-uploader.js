@@ -11,7 +11,7 @@ const openai = new OpenAIApi(configuration)
 const cloudinary = require('cloudinary')
 const fs = require('node:fs')
 
-async function autoUploader(file, content, message) {
+async function autoUploader(file, content, message, remove_background) {
   const filePath = './app/config/folders.json'
   const data = await fs.readFileSync(filePath, 'utf8')
   const { folders } = JSON.parse(data)
@@ -44,10 +44,16 @@ async function autoUploader(file, content, message) {
     const response = JSON.parse(chatgpt.data.choices[0].message.content)
     const path = `${process.env.CLOUDINARY_FOLDER}/${response.root}/${response.sub}/${response.subsub}`
 
+    const data = {
+      folder: path,
+    }
+
+    if (remove_background === 'true') {
+      data.background_removal = 'cloudinary_ai'
+    }
+
     const reply = await cloudinary.v2.uploader
-      .unsigned_upload(file, process.env.CLOUDINARY_UPLOAD_PRESET, {
-        folder: path,
-      })
+      .unsigned_upload(file, process.env.CLOUDINARY_UPLOAD_PRESET, data)
       .then(response => {
         return `🤖\n**Auto Uploaded to Cloudinary path: "${path}"**`
       })
@@ -58,7 +64,8 @@ async function autoUploader(file, content, message) {
     message.reply(reply)
   } catch (error) {
     message.reply(
-      '🪳\nSorry, ran into trouble with the OpenAI API. Error Message: ' + error
+      '🪳\nSorry, ran into trouble with the Cloudinary API. Error Message: ' +
+        error.message
     )
   }
 }
