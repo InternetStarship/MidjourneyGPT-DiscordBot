@@ -99,12 +99,7 @@ client.on('messageCreate', async message => {
     const data = await fs.readFileSync(filePath, 'utf8')
     const { config } = JSON.parse(data)
     if (config.auto_upload) {
-      autoUploader(
-        message.attachments.first().url,
-        message.content,
-        message,
-        config.remove_background
-      )
+      autoUploader(message.attachments.first().url, message.content, message)
     }
   }
 })

@@ -11,7 +11,7 @@ const openai = new OpenAIApi(configuration)
 const cloudinary = require('cloudinary')
 const fs = require('node:fs')
 
-async function autoUploader(file, content, message, remove_background) {
+async function autoUploader(file, content, message) {
   const filePath = './app/config/folders.json'
   const data = await fs.readFileSync(filePath, 'utf8')
   const { folders } = JSON.parse(data)
@@ -46,10 +46,6 @@ async function autoUploader(file, content, message, remove_background) {
 
     const data = {
       folder: path,
-    }
-
-    if (remove_background === 'true') {
-      data.background_removal = 'cloudinary_ai'
     }
 
     const reply = await cloudinary.v2.uploader
