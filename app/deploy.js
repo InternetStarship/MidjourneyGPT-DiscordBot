@@ -7,7 +7,7 @@ require('dotenv').config()
 
 const { REST, Routes } = require('discord.js')
 const fs = require('fs')
-const path = require('node:path')
+const path = require('path')
 
 const commands = []
 const foldersPath = path.join(__dirname, 'commands')
