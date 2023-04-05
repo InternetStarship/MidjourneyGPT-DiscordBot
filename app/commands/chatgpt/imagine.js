@@ -122,17 +122,17 @@ async function generate(
   const content = result
     .replace('[subject]', `[${subject}]`)
     .replace('[style]', `[${style}]`)
-    .replace('[background] background', `--bg`)
+    .replace('[background] background', `[skip-me]`)
 
   const conversation = [
     {
       role: 'system',
       content:
-        'You a creative writer and excel at ultra descriptive ways to rewrite words. You take any sentence and make variations of sentence where any word that has brackets you will find alternative descriptive words to use. Remember you MUST always leave "--bg" as is. Example, a sentence like "a photo of [cat] with [type of lighting]" could be turned into  2 variations like this: 1: "a photo of a large long haired cat with green eyes and long claws with dark, moody and low smokey lighting" 2: "a photo of a fluffy orange cat with bright contrast lighting". You only provide JSON output. Make sure to always change what is inside bracket for each variation. Only output JSON like this: {"variations": ["variation 1", "variation 2"]}',
+        'You a creative writer and excel at ultra descriptive ways to rewrite words. You take any sentence and make variations of sentence where any word that has brackets you will find alternative descriptive words to use. Remember you MUST always leave "[skip-me]" as is, do not change "[skip-me]". Example, a sentence like "a photo of [cat] with [type of lighting]" could be turned into  2 variations like this: 1: "a photo of a large long haired cat with green eyes and long claws with dark, moody and low smokey lighting" 2: "a photo of a fluffy orange cat with bright contrast lighting". You only provide JSON output. Make sure to always change what is inside bracket for each variation. Only output JSON like this: {"variations": ["variation 1", "variation 2"]}',
     },
     {
       role: 'user',
-      content: `I want ${count} variations of the following as JSON (never append a period at end of sentence or capitalize, keep all lower case). Please leave "--bg" as is and only return JSON:
+      content: `I want ${count} variations of the following as JSON (never append a period at end of sentence or capitalize, keep all lower case). Only return JSON:
       
 
       "${content}"`,
@@ -154,7 +154,7 @@ async function generate(
   try {
     const replyJSON = JSON.parse(
       chatgpt.data.choices[0].message.content.replaceAll(
-        '--bg',
+        '[skip-me]',
         `${background} background`
       )
     )
