@@ -4,7 +4,7 @@
  */
 
 const { SlashCommandBuilder } = require('discord.js')
-const fs = require('node:fs')
+const fs = require('fs')
 
 const data = new SlashCommandBuilder()
   .setName('formula-add')

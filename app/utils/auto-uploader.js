@@ -9,7 +9,7 @@ const configuration = new Configuration({
 })
 const openai = new OpenAIApi(configuration)
 const cloudinary = require('cloudinary')
-const fs = require('node:fs')
+const fs = require('fs')
 
 async function autoUploader(file, content, message) {
   const filePath = './app/config/folders.json'
