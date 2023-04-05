@@ -89,9 +89,6 @@ module.exports = {
     const count = interaction.options.getString('count') || 7
 
     if (!formula) return interaction.reply('Please provide a formula.')
-    if (!subject) return interaction.reply('Please provide a subject.')
-    if (!style) return interaction.reply('Please provide a style.')
-    if (!background) return interaction.reply('Please provide a background.')
 
     await interaction.deferReply()
     await interaction.editReply(
