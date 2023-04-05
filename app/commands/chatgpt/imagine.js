@@ -28,17 +28,11 @@ data.addStringOption(option =>
 )
 
 data.addStringOption(option =>
-  option
-    .setName('subject')
-    .setDescription('What is the subject of the image?')
-    .setRequired(true)
+  option.setName('subject').setDescription('What is the subject of the image?')
 )
 
 data.addStringOption(option =>
-  option
-    .setName('style')
-    .setDescription('What is the style of the image?')
-    .setRequired(true)
+  option.setName('style').setDescription('What is the style of the image?')
 )
 
 data.addStringOption(option =>
@@ -47,7 +41,6 @@ data.addStringOption(option =>
     .setDescription(
       'What is the background of the image? (white, transparent or creative)'
     )
-    .setRequired(true)
 )
 
 data.addStringOption(option =>
